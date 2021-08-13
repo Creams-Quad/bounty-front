@@ -1,4 +1,5 @@
 # bounty-front
+
 ## Team Agreement
 
 ### Key strengths
