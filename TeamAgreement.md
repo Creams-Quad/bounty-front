@@ -1,4 +1,4 @@
-# bounty-front
+# Bounty-Front
 
 ## Team Agreement
 
