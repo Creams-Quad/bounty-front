@@ -3,23 +3,24 @@
 ## Team Agreement
 
 ### Key strengths
-
-Tek - Key strengths include design, front-end
-Cullen - Key strengths include communication, documentation 
-Louis- Key strengths include leadership skills, project management 
-Sunny - Key strengths include adaptability, communication 
+- Tek - Key strengths include design, front-end
+- Cullen - Key strengths include communication, documentation 
+- Louis- Key strengths include leadership skills, project management 
+- Sunny - Key strengths include adaptability, communication 
 
 We as a team utilize these strengths to create our vision into reality. We are committed to user experience by clear communication and an understanding of code flow.
 
 ### Competencies to develop 
-Tek - Better communication
-Cullen - Team spirit
-Louis - Technical skills 
-Sunny - Tool knowledge
+- Tek - Better communication
+- Cullen - Team spirit
+- Louis - Technical skills 
+- Sunny - Tool knowledge
 
 ### Approaching work and Planning 
-
-We utilize Notion to keep track of due dates and todos, We will meet everyday 9AM to discuss progress for the project before implementation. We will meet back up again around 5PM for code review, discussion, and final pull requests. For communication we will utilize Slack for day to day operations. 
+- We utilize Notion to keep track of due dates and todos
+- We will meet Monday - Friday 9AM to discuss progress for the project before implementation. 
+- We will meet back up again around 5PM for code review, discussion, and final pull requests. 
+- For communication we will utilize Slack for day to day operations. 
 
 # Conflict Plan
 When conflict arises, we will first and foremost communicate and gather a solution. If conflict escalates we will reach out toa third party member such as a TA or the instructor to mitigate our conflict and come to a uniform solution. 
