@@ -39,7 +39,7 @@
 - [Redux Tool Kit](https://redux-toolkit.js.org/introduction/getting-started): help manage state
 - [Redux-Thunk](https://github.com/reduxjs/redux-thunk): middleware allows you to write action creators that return a function instead of an action.
 - [React-Redux](https://react-redux.js.org/introduction/getting-started): React components read data from a Redux store, and dispatch actions to the store to update state.
-- [Node Sass](https://sass-lang.com/documentation): is a stylesheet language that’s compiled to CSS
+- [Node Sass](https://sass-lang.com/documentation): is a stylesheet language that's compiled to CSS
 - [Axios](https://axios-http.com/docs/intro): is a promise-based HTTP Client for node.js and the browser.
 - [React test library](https://testing-library.com/docs/react-testing-library/intro/): provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
 - [Jest](https://jestjs.io/docs/getting-started): JavaScript Testing Framework
