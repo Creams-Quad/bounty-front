@@ -1,53 +1,70 @@
-# bounty-front
+# Getting Started with Create React App
 
-# Team Cream Squad
-- Cullen Sharp
-- Sunny Lee
-- Louis Lassgeue
-- Tek Jones
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## User Stories
-  - [Project Board has User Stories](https://www.notion.so/User-Stories-be5412cb1ed34d62b22773eda8816897)
+## Available Scripts
 
-## UML
+In the project directory, you can run:
 
-### Wireframe
-![wireframe_UML](assets/wireframe01.png)
-![wireframe_UML](assets/wireframe04.png)
-![wireframe_UML](assets/wireframe03.png)
-![wireframe_UML](assets/wireframe02.png)
-![wireframe_UML](assets/wireframe05.png)
-![wireframe_UML](assets/wireframe06.png)
-![wireframe_UML](assets/wireframe07.png)
+### `yarn start`
 
-### Domain Model
-![dataflow](assets/dataflow.png)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Setup
-1. To setup the app you want to first `fork` repository from [GitHub](https://github.com/Creams-Quad/bounty-back)
-2. In the fork repository click the green `code` tab. A drop down to copy the repository link or url will be shown. Copy that link.
-3. Go to your local machine terminal and `cd` into a directory or folder to copy link.
-4. In that directory or folder type in `git clone (with the copylink)`
-5. Type in `npm install` to install all dependencies for the app.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Technologies
-![Technologies Used](assets/tech.png)
-![Technologies Used](assets/tech02.png)
+### `yarn test`
 
-- [React](https://reactjs.org/docs/getting-started.html): encapsulated components that manage their own state, then compose them to make complex UIs.
-- [React Router](https://reactrouter.com/web/guides/quick-start): is a collection of navigational components that compose declaratively with your application. 
-- [Redux Tool Kit](https://redux-toolkit.js.org/introduction/getting-started): help manage state
-- [Redux-Thunk](https://github.com/reduxjs/redux-thunk): middleware allows you to write action creators that return a function instead of an action.
-- [React-Redux](https://react-redux.js.org/introduction/getting-started): React components read data from a Redux store, and dispatch actions to the store to update state.
-- [Node Sass](https://sass-lang.com/documentation): is a stylesheet language that’s compiled to CSS
-- [Axios](https://axios-http.com/docs/intro): is a promise-based HTTP Client for node.js and the browser.
-- [React test library](https://testing-library.com/docs/react-testing-library/intro/): provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
-- [Jest](https://jestjs.io/docs/getting-started): JavaScript Testing Framework
-- [Eslint](https://eslint.org/docs/user-guide/getting-started): is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-- [Netlify](https://docs.netlify.com/?_ga=2.5404464.267923715.1629131091-1438724036.1626298259): Git-based workflow and powerful serverless platform to build, deploy web apps
-- [Notion](https://www.notion.so/): project management board
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Links
-- [Project Management Board](https://www.notion.so/Cream-Squad-2eecc388ea1a4a70b6992435f3e885a8)
-- [Bounty backend code](https://github.com/Creams-Quad/bounty-back)
-- [Bounty Website]()
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
