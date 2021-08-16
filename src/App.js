@@ -1,14 +1,19 @@
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import { withAuth0 } from "@auth0/auth0-react";
+import Landingpage from './components/Landingpage/Landingpage';
 
 
-import Login from './Login/Login.js';
 
 function App() {
+
   return (
+    
     <div className="App">
-      <Login />
+      <Navbar ></Navbar>
+      <Landingpage/>
     </div>
   );
 }
 
-export default App;
+export default withAuth0(App);
