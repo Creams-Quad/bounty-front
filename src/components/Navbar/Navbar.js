@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/bounty.png";
 import "./navbar.scss";
+
 import LoginButton from "../LoginButton.js";
 import { useAuth0 } from "@auth0/auth0-react";
+
+import {Link} from 'react-router-dom'
+
 
 export default function BountyNav() {
   let listener = null;
@@ -26,7 +30,9 @@ export default function BountyNav() {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
+
   const { isAuthenticated } = useAuth0();
+
   return (
     <>
       <nav
@@ -40,27 +46,30 @@ export default function BountyNav() {
           <div className="nav-flex">
             
               <div href="/">
-                <img src={logo} alt="" className="logo" />
+                <img src={logo} alt="" className="logo"/>
               </div>
            
-
-            
-              <div className="links">
-                {isAuthenticated ? (
-                  <a style={{ color: "#1e5451" }} href="/admin">
-                    Admin
-                  </a>
-                ) : null}
-                {isAuthenticated ? (
-                  <a style={{ color: "#1e5451" }} href="/Bounty Board">
-                    Bounty Board
-                  </a>
-                ) : null}
-                {isAuthenticated ? null : <LoginButton />}
-                <a style={{ color: "#1e5451" }} href="/about">
+              <nav className="links"> 
+                {
+                isAuthenticated ? 
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
+                  Admin
+                </Link> : null
+                }
+                {
+                isAuthenticated ? 
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/bountyboard">
+                  Bounty Board
+                </Link>
+                : null 
+                }
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/about">
                   Team
-                </a>
-              </div>
+                </Link>
+              </nav>
+
+            </div>
+
             
           </div>
           
