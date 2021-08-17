@@ -1,27 +1,45 @@
-main{
+main {
   padding-top: 100px;
   background-color: #f3f0eb;
+}
 
+.grid {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
-  .grid{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    
-    
-    .grid-item-one{
-      width: 50%;
-    }
+.grid-item-one {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  color: #f47a55;
 
-    .grid-item-two{
-      width: 50%;
-
-      img{
-        height: 500px;
-      }
-    }
+  .hero-title {
+    color: #1e5451;
+    max-width: 450px;
   }
 
-  
+  .hero-button {
+    margin-top: 30px;
+    color: #1e5451;
+    background: none;
+    border: 2px solid #1e5451;
+    border-radius: 6px;
+    padding: 10px 20px 10px 20px;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+.grid-item-two {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    width: 80%;
+  }
 }

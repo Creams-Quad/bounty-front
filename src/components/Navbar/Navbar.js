@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom'
 export default function BountyNav() {
   let listener = null;
   const [scrollState, setScrollState] = useState("top");
+  const { isAuthenticated } = useAuth0();
 
   // nav bar color change on scroll
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function BountyNav() {
     };
   }, [scrollState]);
 
-  const { isAuthenticated } = useAuth0();
+  
 
   return (
     <>
@@ -66,9 +67,9 @@ export default function BountyNav() {
                 <Link style={{margin:'10px', color: "#1e5451" }} to="/about">
                   Team
                 </Link>
+                {isAuthenticated ? null : <LoginButton/>}
               </div>
 
-                {isAuthenticated ? null : <LoginButton/>}
             </div>
             
           </div>
