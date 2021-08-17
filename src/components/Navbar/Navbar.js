@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
-import LoginButton from "../Login";
 import logo from "../../assets/bounty.png";
 import "./navbar.scss";
+import LoginButton from '../LoginButton.js';
+import {useAuth0} from '@auth0/auth0-react'
+
 
 export default function BountyNav() {
   let listener = null;
@@ -26,7 +28,7 @@ export default function BountyNav() {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
-
+  const {isAuthenticated} = useAuth0();
   return (
     <>
       <nav
@@ -45,13 +47,21 @@ export default function BountyNav() {
             </div>
 
             <div>
+
               <div className="links">
+                {
+                isAuthenticated ? 
                 <a style={{ color: "#1e5451" }} href="/admin">
                   Admin
-                </a>
+                </a> : null
+                }
+                {
+                isAuthenticated ? 
                 <a style={{ color: "#1e5451" }} href="/Bounty Board">
                   Bounty Board
                 </a>
+                : null 
+                }
                 <a style={{ color: "#1e5451" }} href="/about">
                   Team
                 </a>
@@ -59,7 +69,10 @@ export default function BountyNav() {
             </div>
             
           </div>
-
+          {isAuthenticated ?
+         null
+          : <LoginButton/>  
+        }
           {/* {!this.props.auth0.isAuthenticated ? (
           <LoginButton />
         ) : ( */}
