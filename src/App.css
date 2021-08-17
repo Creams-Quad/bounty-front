@@ -1,2 +1,16 @@
-.App {
+
+h1{
+  font-weight: 700;
+  line-height: 1;
+  font-size: 70px;
+}
+
+h5{
+  font-weight: 700;
+  line-height: 1;
+}
+
+.container{
+  max-width: 1300px;
+  margin: auto;
 }
