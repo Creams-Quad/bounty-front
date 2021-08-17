@@ -14,14 +14,16 @@ const {user, isAuthenticated} = useAuth0();
 
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Landingpage/>
-
+      {/* <Bounties/> */}
       <Router>
+        <Navbar></Navbar>
         <Switch>
           <Route exact path="/">
-            {isAuthenticated ? <Bounties/> : null}
+            <Landingpage/> 
           </Route>
+          <Route exact path="/bountyboard">
+            <Bounties/> 
+          </Route> 
         </Switch>
       </Router>
     </div>
