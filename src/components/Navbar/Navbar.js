@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Form } from "react-bootstrap";
 import logo from "../../assets/bounty.png";
 import "./navbar.scss";
-import LoginButton from '../LoginButton.js';
-import {useAuth0} from '@auth0/auth0-react'
-
+import LoginButton from "../LoginButton.js";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function BountyNav() {
   let listener = null;
@@ -28,7 +26,7 @@ export default function BountyNav() {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
-  const {isAuthenticated} = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <>
       <nav
@@ -38,51 +36,42 @@ export default function BountyNav() {
           position: "fixed",
         }}
       >
-        <div className="container">
+        <div className="nav-container">
           <div className="nav-flex">
-            <div>
+            
               <div href="/">
                 <img src={logo} alt="" className="logo" />
               </div>
-            </div>
+           
 
-            <div>
-
+            
               <div className="links">
-                {
-                isAuthenticated ? 
-                <a style={{ color: "#1e5451" }} href="/admin">
-                  Admin
-                </a> : null
-                }
-                {
-                isAuthenticated ? 
-                <a style={{ color: "#1e5451" }} href="/Bounty Board">
-                  Bounty Board
-                </a>
-                : null 
-                }
+                {isAuthenticated ? (
+                  <a style={{ color: "#1e5451" }} href="/admin">
+                    Admin
+                  </a>
+                ) : null}
+                {isAuthenticated ? (
+                  <a style={{ color: "#1e5451" }} href="/Bounty Board">
+                    Bounty Board
+                  </a>
+                ) : null}
+                {isAuthenticated ? null : <LoginButton />}
                 <a style={{ color: "#1e5451" }} href="/about">
                   Team
                 </a>
               </div>
-            </div>
             
           </div>
-          {isAuthenticated ?
-         null
-          : <LoginButton/>  
-        }
-          {/* {!this.props.auth0.isAuthenticated ? (
-          <LoginButton />
-        ) : ( */}
+          
+
           <img
             style={{ borderRadius: "50%", height: "75px" }}
             // src={this.props.auth0.user.picture}
             alt=""
           ></img>
-          {/* )} */}
-          <Form inline></Form>
+
+         
         </div>
       </nav>
     </>
