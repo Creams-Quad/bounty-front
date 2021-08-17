@@ -49,7 +49,7 @@ export default function BountyNav() {
                 <img src={logo} alt="" className="logo"/>
               </div>
            
-              <nav className="links"> 
+              <div className="links"> 
                 {
                 isAuthenticated ? 
                 <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
@@ -66,13 +66,12 @@ export default function BountyNav() {
                 <Link style={{margin:'10px', color: "#1e5451" }} to="/about">
                   Team
                 </Link>
-              </nav>
+              </div>
 
+                {isAuthenticated ? null : <LoginButton/>}
             </div>
-
             
           </div>
-          
 
           <img
             style={{ borderRadius: "50%", height: "75px" }}
@@ -80,8 +79,6 @@ export default function BountyNav() {
             alt=""
           ></img>
 
-         
-        </div>
       </nav>
     </>
   );
