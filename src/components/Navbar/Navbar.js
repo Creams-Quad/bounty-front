@@ -5,6 +5,8 @@ import "./navbar.scss";
 import LoginButton from '../LoginButton.js';
 import {useAuth0} from '@auth0/auth0-react'
 
+import Navbar from 'react-bootstrap/Navbar';
+import {Link} from 'react-router-dom'
 
 export default function BountyNav() {
   let listener = null;
@@ -28,7 +30,10 @@ export default function BountyNav() {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
+
   const {isAuthenticated} = useAuth0();
+
+
   return (
     <>
       <nav
@@ -42,30 +47,31 @@ export default function BountyNav() {
           <div className="nav-flex">
             <div>
               <div href="/">
-                <img src={logo} alt="" className="logo" />
+                <img src={logo} alt="" className="logo"/>
               </div>
             </div>
 
             <div>
 
-              <div className="links">
+              <Navbar className="links"> 
                 {
                 isAuthenticated ? 
-                <a style={{ color: "#1e5451" }} href="/admin">
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
                   Admin
-                </a> : null
+                </Link> : null
                 }
                 {
                 isAuthenticated ? 
-                <a style={{ color: "#1e5451" }} href="/Bounty Board">
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/bountyboard">
                   Bounty Board
-                </a>
+                </Link>
                 : null 
                 }
-                <a style={{ color: "#1e5451" }} href="/about">
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/about">
                   Team
-                </a>
-              </div>
+                </Link>
+              </Navbar>
+
             </div>
             
           </div>
