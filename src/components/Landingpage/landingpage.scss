@@ -1,4 +1,28 @@
 main{
+  padding-top: 100px;
   background-color: #f3f0eb;
   min-height: 100vh;
+
+  .grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    .grid-item-one{
+      width: 40%;
+    }
+
+    .grid-item-two{
+      width: 60%;
+
+      img{
+        height: 500px;
+      }
+    }
+  }
+
+  .hero-header{
+    max-width: 400px;
+  }
 }
