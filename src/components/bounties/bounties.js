@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./bounties.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import iceCream from '../../assets/iceCream.jpg'
+import iceCream from "../../assets/iceCream.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,9 @@ export default function Bounties() {
   return (
     <div className="container">
       <div className="bounty">
-        <h4 style={{color: "#1e5451"}}>Create bounties or hunt outstanding claims</h4>
+        <h4 style={{ color: "#1e5451" }}>
+          Create bounties or hunt outstanding claims
+        </h4>
       </div>
       <div className="new-bounty-wrapper">
         <Button onClick={handleNewBounty} variant="contained">
@@ -81,12 +84,31 @@ export default function Bounties() {
               variant="outlined"
             />
           </div>
-            <Button type="submit" variant="contained" color="primary">
-              Primary
-            </Button>
+          <Button type="submit" variant="contained" color="primary">
+            Primary
+          </Button>
         </form>
       </div>
+
       <div className="board-wrapper">
+        <Link to="/details">
+          <div className="bounty-item">
+            <div>
+              <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
+              <div className="bounty-descrip">
+                <div className="tiny-text">posted by</div>
+                <h6 className="name">Tek Jones</h6>
+                <h5> 01-23-21//4:30</h5>
+                <div className="descrip-buttons">💜Karma:1000</div>
+                <div className="descrip-buttons">📝Comments:3</div>
+              </div>
+            </div>
+            <div className="ice-Image">
+              <img src={iceCream}></img>
+            </div>
+          </div>
+        </Link>
+
         <div className="bounty-item">
           <div>
             <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
@@ -99,7 +121,7 @@ export default function Bounties() {
             </div>
           </div>
           <div className="ice-Image">
-              <img src={iceCream}></img>
+            <img src={iceCream}></img>
           </div>
         </div>
 
@@ -115,7 +137,7 @@ export default function Bounties() {
             </div>
           </div>
           <div className="ice-Image">
-              <img src={iceCream}></img>
+            <img src={iceCream}></img>
           </div>
         </div>
 
@@ -131,23 +153,7 @@ export default function Bounties() {
             </div>
           </div>
           <div className="ice-Image">
-              <img src={iceCream}></img>
-          </div>
-        </div>
-
-        <div className="bounty-item">
-          <div>
-            <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-            <div className="bounty-descrip">
-              <div className="tiny-text">posted by</div>
-              <h6 className="name">Tek Jones</h6>
-              <h5> 01-23-21//4:30</h5>
-              <div className="descrip-buttons">💜Karma:1000</div>
-              <div className="descrip-buttons">📝Comments:3</div>
-            </div>
-          </div>
-          <div className="ice-Image">
-              <img src={iceCream}></img>
+            <img src={iceCream}></img>
           </div>
         </div>
       </div>
