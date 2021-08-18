@@ -30,6 +30,14 @@ h1 {
   font-size: 70px;
 }
 
+h3{
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  color: #1E5451;
+}
+
 h4 {
   font-family: roboto, sans-serif;
   font-style: normal;
@@ -44,10 +52,19 @@ h5{
   font-weight: 300;
 }
 
+
+
 h6{
   font-size: 17px;
   line-height: 1;
   font-weight: 700;
+}
+
+p{
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #1E5451
 }
 
 .container {
