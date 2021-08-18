@@ -46,8 +46,10 @@ export default function BountyNav() {
         <div className="nav-container">
           <div className="nav-flex">
             
-              <div href="/">
-                <img src={logo} alt="" className="logo"/>
+              <div >
+                <a href="/">
+                  <img href= "/" src={logo} alt="" className="logo"/>
+                </a>  
               </div>
            
               <div className="links"> 
