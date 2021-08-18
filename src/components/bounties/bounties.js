@@ -40,7 +40,7 @@ export default function Bounties() {
   return (
     <div className="container">
       <div className="bounty">
-        <h4>You Made it passed Auth!</h4>
+        <h4 style={{color: "#1e5451"}}>Create bounties or hunt outstanding claims</h4>
       </div>
       <div className="new-bounty-wrapper">
         <Button onClick={handleNewBounty} variant="contained">
@@ -80,10 +80,10 @@ export default function Bounties() {
               defaultValue="Default Value"
               variant="outlined"
             />
+          </div>
             <Button type="submit" variant="contained" color="primary">
               Primary
             </Button>
-          </div>
         </form>
       </div>
       <div className="board-wrapper">
