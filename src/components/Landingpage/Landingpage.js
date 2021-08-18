@@ -10,8 +10,11 @@ export default function Landingpage() {
           <div className="grid">
             <div className="grid-item-one">
               <div className="hero-header">
-                <h5>A social network for</h5>
-                <h1>Solving Ice Cream Based Problems</h1>
+                <h4>A social network for</h4>
+                <div className="hero-title">
+                  <h1>Solving Ice Cream Based Problems</h1>
+                </div>
+                <button className="hero-button">Boards</button>
               </div>
             </div>
             <div className="grid-item-two">

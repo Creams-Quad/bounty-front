@@ -1,0 +1,74 @@
+.bounty {
+  padding-top: 100px;
+}
+
+.new-bounty-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.board-wrapper {
+  border-radius: 8px;
+  margin-top: 30px;
+  padding: 5px 20px 20px 20px;
+  background-color: white;
+
+  .bounty-item {
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ececec;
+    display: flex;
+    justify-content: space-between;
+
+    .bounty-title {
+      padding-bottom: 5px;
+    }
+
+    .ice-Image {
+      height: 90px;
+      object-fit: contain;
+      border-radius: 6px;
+      overflow: hidden;
+
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .bounty-descrip {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .tiny-text {
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+      }
+      .name {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .descrip-buttons {
+        margin-left: 10px;
+        padding: 10px 10px 10px 10px;
+        display: flex;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: 700;
+        color: #5e5b74;
+      }
+
+      .descrip-buttons:hover {
+        background-color: rgb(255, 255, 188);
+      }
+    }
+  }
+}
