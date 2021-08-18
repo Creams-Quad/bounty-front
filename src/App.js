@@ -7,7 +7,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+
+//Components 
 import Bounties  from './components/bounties/bounties';
+import Admin from './components/admin/adminPage.js';
+import Team from './components/team/teamPage.js';
 
 function App() {
 const {user, isAuthenticated} = useAuth0(); 
@@ -18,12 +22,24 @@ const {user, isAuthenticated} = useAuth0();
       <Router>
         <Navbar></Navbar>
         <Switch>
+
           <Route exact path="/">
             <Landingpage/> 
           </Route>
+
           <Route exact path="/bountyboard">
-            <Bounties/> 
+           {isAuthenticated  ?  <Bounties/> : null}  
+          </Route>
+
+          <Route exact path="/admin">
+           {isAuthenticated ? <Admin/> : null}
           </Route> 
+
+          <Route exact path="/about">
+            <Team/> 
+          </Route>
+
+
         </Switch>
       </Router>
     </div>
