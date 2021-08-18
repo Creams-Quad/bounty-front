@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 //Components 
+import Details from './components/Details/Details.js';
 import Bounties  from './components/bounties/bounties';
 import Admin from './components/admin/adminPage.js';
 import Team from './components/team/teamPage.js';
@@ -39,6 +40,9 @@ const {user, isAuthenticated} = useAuth0();
             <Team/> 
           </Route>
 
+          <Route exact path="/details">
+            <Details/> 
+          </Route>
 
         </Switch>
       </Router>
