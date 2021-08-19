@@ -81,33 +81,12 @@
 
 ## 🏡 Team
 
-<img
-   src="https://avatars.githubusercontent.com/u/38057919?v=4"
-   width = 60
-   height= 60
-/>
 [Cullen Sharp](https://github.com/CullenSharp)
 
-<img
-   src="https://avatars.githubusercontent.com/u/74191805?v=4"
-   width = 60
-   height= 60
-/>
 [Louis Lassegue](https://github.com/mrloulass)
 
-<img
-   src="https://avatars.githubusercontent.com/u/5589323?v=4"
-   width = 60
-   height= 60
-/>
 [Sunny Lee](https://github.com/sunny-lee3)
 
-
-<img
-   src="https://avatars.githubusercontent.com/u/63610157?v=4"
-   width = 60
-   height= 60
-/>
 [Tek Jones](https://github.com/Tekthree)
 
 ## 🔍 More Resources
