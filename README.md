@@ -81,13 +81,10 @@
 
 ## 🏡 Team
 
-[Cullen Sharp](https://github.com/CullenSharp)
-
-[Louis Lassegue](https://github.com/mrloulass)
-
-[Sunny Lee](https://github.com/sunny-lee3)
-
-[Tek Jones](https://github.com/Tekthree)
+- [Cullen Sharp](https://github.com/CullenSharp)
+- [Louis Lassegue](https://github.com/mrloulass)
+- [Sunny Lee](https://github.com/sunny-lee3)
+- [Tek Jones](https://github.com/Tekthree)
 
 ## 🔍 More Resources
 
