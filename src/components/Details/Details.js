@@ -26,7 +26,7 @@ export default function Details() {
   }
 console.log('details bounty info', bountyInfo)
   return (
-    <div className="container">
+    <div className="container" style={{marginBottom: "200px"}}>
       <div className="details">
         
       </div>

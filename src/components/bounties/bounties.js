@@ -124,7 +124,7 @@ function Bounties(props) {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{marginBottom: "200px"}}>
       <div className="bounty">
         <div style={{ color: "#1e5451" }}>
           Create bounties or hunt outstanding claims
@@ -164,14 +164,14 @@ function Bounties(props) {
               id="outlined-multiline-static"
               label="Description"
               multiline
-              rows={4}
+              rows={8}
               onChange={handleDescChange}
-              defaultValue="Default Value"
+              defaultValue=""
               variant="outlined"
             />
           </div>
           <Button type="submit" variant="contained" color="primary">
-            Primary
+            Submit
           </Button>
         </form>
       </div>
