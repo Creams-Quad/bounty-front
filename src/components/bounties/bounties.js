@@ -1,7 +1,10 @@
 //component specific imports
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+
+//Context
+import { BountyContext } from '../bounties/createBountyProvider.js';
 
 //Auth
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
@@ -13,6 +16,9 @@ import TextField from "@material-ui/core/TextField";
 import iceCream from "../../assets/iceCream.jpg";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,11 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Bounties() {
+function Bounties(props) {
   const classes = useStyles();
   const [heading, setHeading] = useState("");
   const [description, setDescription]= useState("")
-  const [dbBounty, setDbBounty] = useState("");
+
+  const { bountyInfo, setBountyInfo }  = useContext(BountyContext);
+
   const [showNewBounty, setShowNewBounty] = useState(false);
   const {user, isAuthenticated, getIdTokenClaims} = useAuth0();
 
@@ -50,8 +58,8 @@ function Bounties() {
         // this is where we can make a request to GET bounty list
         .then(function(response){
           let axiosResults = response.data;
-          console.log(axiosResults);
-          setDbBounty(response.data)
+          // console.log(axiosResults);
+          setBountyInfo(axiosResults)
         })
         .catch(function(err){
           console.error(err)
@@ -61,10 +69,10 @@ function Bounties() {
       console.error(err);
       })
     }
-  }, [dbBounty] );
+  }, [bountyInfo] );
   
 
-  console.log('coming from bounty.js', user);
+  // console.log('coming from bounty.js', user);
   
   const handleChange = (event) => {
     setHeading(event.target.value);
@@ -97,21 +105,6 @@ function Bounties() {
             .then(function(response){
               let axiosResults = response.data;
               console.log("",axiosResults);
-              // const config2 = {
-              //   header: {"Authorization": `Bearer ${jwt}`},
-              //   method: 'get',
-              //   baseURL: 'http://localhost:3000',
-              //   url: '/api/v1/bounties',
-              // }
-              // axios(config2)
-              //   .then(function(response){
-              //     console.log('GET',response)
-              //     setDbBounty(response.data);
-              //   })
-
-              //   .catch(function(err){
-              //     console.error(err)
-              //   }) 
             })
             .catch(function(err){
               console.error(err)
@@ -123,7 +116,7 @@ function Bounties() {
     }
   }  
   // log the db for bounty  
-  console.log(dbBounty)         
+  // console.log(dbBounty)       
           
   // show form        
   const handleNewBounty = () => {
@@ -183,7 +176,7 @@ function Bounties() {
           </Button>
         </form>
       </div>
-        {dbBounty ?  dbBounty.reverse().map((bountyItem) => {
+        {bountyInfo ?  bountyInfo.reverse().map((bountyItem) => {
           return(
             <div className="board-wrapper">
                 <Link to="/details">
@@ -206,54 +199,6 @@ function Bounties() {
             </div>
           )
         }): null}
-        {/* <div className="bounty-item">
-          <div>
-            <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-            <div className="bounty-descrip">
-              <div className="tiny-text">posted by</div>
-              <h6 className="name">Tek Jones</h6>
-              <h5> 01-23-21//4:30</h5>
-              <div className="descrip-buttons">💜Karma:1000</div>
-              <div className="descrip-buttons">📝Comments:3</div>
-            </div>
-          </div>
-          <div className="ice-Image">
-            <img src={iceCream}></img>
-          </div>
-        </div>
-
-        <div className="bounty-item">
-          <div>
-            <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-            <div className="bounty-descrip">
-              <div className="tiny-text">posted by</div>
-              <h6 className="name">Tek Jones</h6>
-              <h5> 01-23-21//4:30</h5>
-              <div className="descrip-buttons">💜Karma:1000</div>
-              <div className="descrip-buttons">📝Comments:3</div>
-            </div>
-          </div>
-          <div className="ice-Image">
-            <img src={iceCream}></img>
-          </div>
-        </div>
-
-        <div className="bounty-item">
-          <div>
-            <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-            <div className="bounty-descrip">
-              <div className="tiny-text">posted by</div>
-              <h6 className="name">Tek Jones</h6>
-              <h5> 01-23-21//4:30</h5>
-              <div className="descrip-buttons">💜Karma:1000</div>
-              <div className="descrip-buttons">📝Comments:3</div>
-            </div>
-          </div>
-          <div className="ice-Image">
-            <img src={iceCream}></img>
-          </div>
-        </div>
-      </div> */}
     </div>
 
   );
