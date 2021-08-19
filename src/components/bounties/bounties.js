@@ -45,7 +45,7 @@ function Bounties() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowNewBounty(false);
-    // Making a sending a post request for new bounty
+    //Making a sending a post request for new bounty
     if(isAuthenticated){
       getIdTokenClaims()
       .then(res => {
