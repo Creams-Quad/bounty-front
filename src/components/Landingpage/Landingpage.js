@@ -54,7 +54,7 @@ export default function Landingpage() {
           </section>
           <section className="section">
             <div className="servie-title-wrapper">
-              <div className="subtag">service</div>
+              <div className="subtag">services</div>
               <h3>What Problems does this solve</h3>
               <p>
                 We set out to solve a problem for three types of users. Lets
@@ -105,7 +105,7 @@ export default function Landingpage() {
                     Let's start by creating your first bounty
                   </div>
                   <p>Lorem Ipsum a couple words on that.</p>
-                  <button className="demo-button">Get Started</button>
+                  <button className="demo-button">New Bounty</button>
                 </div>
               </div>
             </div>
