@@ -14,11 +14,14 @@
 
 ## 📖 Table of Contents
 
+### [Wireframe](#-Wireframe)
+
+### [Dependencies](#-Dependencies)
+
 ### [Our Repos](#-Our-Repos)
 
 ### [Team](#-Team)
 
-### [Team Agreement](./TeamAgreement.md)
 
 ### [More Resources](#-More-Resources)
 
@@ -58,6 +61,20 @@
     - Collect karma for each recipe made
     - Build karma for reputation
 
+## 📦 Dependencies
+
+- [Auth0 React SDK](https://auth0.com/docs/quickstart/spa/react)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Material UI](https://material-ui.com/)
+- [Node SASS](https://www.npmjs.com/package/node-sass)
+- [React](https://www.npmjs.com/package/react)
+- [React DOM](https://www.npmjs.com/package/react-dom)
+- [React Router DOM](https://www.npmjs.com/package/react-router-dom)
+- [React Scripts](https://www.npmjs.com/package/react-scripts)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [SASS](https://www.npmjs.com/package/sass)
+- [Web Vitals](https://www.npmjs.com/package/web-vitals)
+
 ## 🚧 Our Repos
 
 [Our API](https://github.com/Creams-Quad/bounty-back)
@@ -74,3 +91,4 @@
 - [Project Management Board](https://www.notion.so/Cream-Squad-2eecc388ea1a4a70b6992435f3e885a8)
 - [Bounty backend code](https://github.com/Creams-Quad/bounty-back)
 - [Notion](https://www.notion.so/)
+- [Team Agreement](./TeamAgreement.md)
