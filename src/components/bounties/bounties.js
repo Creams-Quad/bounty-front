@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+//component specific imports
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./bounties.scss";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import axios from 'axios';
 
+//Auth
+import { withAuth0, useAuth0 } from "@auth0/auth0-react";
+
+//styling imports 
+import { Description } from "@material-ui/icons";
+import "./bounties.scss";
+import TextField from "@material-ui/core/TextField";
 import iceCream from "../../assets/iceCream.jpg";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,20 +27,59 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Bounties() {
+function Bounties() {
   const classes = useStyles();
-  const [value, setValue] = useState("");
+  const [heading, setHeading] = useState("");
+  const [description, setDescription]= useState("")
   const [showNewBounty, setShowNewBounty] = useState(false);
+  const {user, isAuthenticated, getIdTokenClaims} = useAuth0();
 
+  console.log('coming from bounty.js', user);
+  
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setHeading(event.target.value);
   };
-
+  const handleDescChange = (event) => {
+    setDescription(event.target.value);
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowNewBounty(false);
-  };
-
+    //Making a sending a post request for new bounty
+    if(isAuthenticated){
+      getIdTokenClaims()
+      .then(res => {
+        const jwt = res.__raw;
+        const config = {
+            header: {"Authorization": `Bearer ${jwt}`},
+            method:'post',
+            baseURL:'http://localhost:3000',
+            url:'/api/v1/bounties',
+            data: {
+              heading: heading,
+              content: description,
+              karma: 100, 
+              poster: user.given_name,
+            },
+          }
+          axios(config)
+          // this is where we can make a request to GET bounty list
+            .then(function(response){
+              let axiosResults = response.data;
+              console.log(axiosResults);
+            })
+            .catch(function(err){
+              console.error(err)
+            })
+          })
+      .catch(function(err){
+        console.error(err)
+      })
+    }
+  }    
+            
+          
+  // show form        
   const handleNewBounty = () => {
     console.log("pressed");
     setShowNewBounty(true);
@@ -63,7 +110,7 @@ export default function Bounties() {
               label="Title"
               multiline
               maxRows={4}
-              value={value}
+              value={heading}
               onChange={handleChange}
               variant="outlined"
             />
@@ -80,6 +127,7 @@ export default function Bounties() {
               label="Description"
               multiline
               rows={4}
+              onChange={handleDescChange}
               defaultValue="Default Value"
               variant="outlined"
             />
@@ -160,3 +208,4 @@ export default function Bounties() {
     </div>
   );
 }
+export default withAuth0(Bounties);

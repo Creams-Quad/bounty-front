@@ -8,20 +8,20 @@ import MemeGenerator from './memeGenerator.js';
 
 export default function Team(){ 
     
-    const [meme, setMemes] = useState(); 
+    // const [meme, setMemes] = useState(); 
 
-    useEffect(()=> {
-        axios({
-            method: 'get',
-            url: 'https://api.imgflip.com/get_memes',
-        })
-        .then( function(response) {
-           setMemes(response.data.data.memes);
-        })
-        .catch( function(err) {
-            console.error(err);
-        })
-    })
+    // useEffect(()=> {
+    //     axios({
+    //         method: 'get',
+    //         url: 'https://api.imgflip.com/get_memes',
+    //     })
+    //     .then( function(response) {
+    //        setMemes(response.data.data.memes);
+    //     })
+    //     .catch( function(err) {
+    //         console.error(err);
+    //     })
+    // })
 
     return(
         <div className="container">
@@ -50,7 +50,7 @@ export default function Team(){
                     <div style={{
                         marginTop: '10%'
                     }}>
-                        <MemeGenerator  meme={meme}/>
+                        <MemeGenerator />
                     </div>
 
                     <div style={{

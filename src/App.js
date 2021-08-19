@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
@@ -8,14 +9,19 @@ import {
   Route
 } from "react-router-dom";
 
+
 //Components 
 import Details from './components/Details/Details.js';
 import Bounties  from './components/bounties/bounties';
 import Admin from './components/admin/adminPage.js';
 import Team from './components/team/teamPage.js';
 
+
 function App() {
-const {user, isAuthenticated} = useAuth0(); 
+
+  // Auth0 methods and functions 
+  const { isAuthenticated } = useAuth0(); 
+
 
   return (
     <div className="App">
