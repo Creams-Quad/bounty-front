@@ -79,7 +79,7 @@ function Bounties() {
   }    
             
           
-          
+  // show form        
   const handleNewBounty = () => {
     console.log("pressed");
     setShowNewBounty(true);
