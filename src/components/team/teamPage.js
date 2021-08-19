@@ -27,15 +27,14 @@ export default function Team(){
         <div className="container">
             <main>
                 <div style={{marginBottom: "200px"}}>
-                    <TransitionsModal/> 
                     <div style={{
-                            background: "url('https://c.tenor.com/wcrmL2x1D2gAAAAC/assorted-icecream.gif')",
-                            backgroundSize: 'contain',
-                            opacity: '0.7',
-                            color: 'white'
+                        background: "url('https://c.tenor.com/wcrmL2x1D2gAAAAC/assorted-icecream.gif')",
+                        backgroundSize: 'contain',
+                        opacity: '0.7',
+                        color: 'white'
                     }}>
                         <h1 style={{
-                    
+                            
                         }}>Our Mission</h1> 
                     </div>
 
@@ -58,6 +57,7 @@ export default function Team(){
                         marginBottom: '10%'
                     }}>
                         <p>As you can see from the slide-show up above, there are many different ideas that have lots of potential. We want to understand what users really want in their ice-cream.</p>
+                        <TransitionsModal/> 
                     </div>
                     <div style={{
                         display: 'flex',

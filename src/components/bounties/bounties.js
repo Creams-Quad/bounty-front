@@ -9,7 +9,6 @@ import { BountyContext } from "../bounties/createBountyProvider.js";
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
 
 //styling imports
-import { Description, SettingsInputAntennaTwoTone } from "@material-ui/icons";
 import "./bounties.scss";
 import TextField from "@material-ui/core/TextField";
 import iceCream from "../../assets/iceCream.jpg";
@@ -50,12 +49,17 @@ function Bounties(props) {
 
   const { bountyInfo, setBountyInfo } = useContext(BountyContext);
 
+  // const [postData, setPostData] = useState();
+  const [formData, setFormData]= useState();
+
   const [showNewBounty, setShowNewBounty] = useState(false);
+  const [idValue, setIdValue] = useState();
   const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = (id) => {
     setOpen(true);
+    setIdValue(id)
   };
 
   const handleClose = () => {
@@ -78,7 +82,7 @@ function Bounties(props) {
             .then(function (response) {
               let axiosResults = response.data;
               // console.log(axiosResults);
-              setBountyInfo(axiosResults);
+              setFormData(axiosResults);
             })
             .catch(function (err) {
               console.error(err);
@@ -88,7 +92,7 @@ function Bounties(props) {
           console.error(err);
         });
     }
-  }, [bountyInfo]);
+  }, [formData]);
 
   // console.log('coming from bounty.js', user);
 
@@ -133,9 +137,11 @@ function Bounties(props) {
         });
     }
   };
+
+
   // log the db for bounty
   // console.log(dbBounty)
-
+  // console.log(formData)
   // show form
   const handleNewBounty = () => {
     console.log("pressed");
@@ -194,11 +200,11 @@ function Bounties(props) {
           </Button>
         </form>
       </div>
-      {bountyInfo
-        ? bountyInfo.reverse().map((bountyItem) => {
+      {formData
+        ? formData.reverse().map((bountyItem) => {
             return (
               <div className="board-wrapper">
-                <div type="button" onClick={handleOpen} className="bounty-item">
+                <div type="button" onClick={() => handleOpen(bountyItem.id)} className="bounty-item">
                   <div>
                     <h3 className="bounty-title">
                       {bountyItem.header === null ? (
@@ -224,7 +230,7 @@ function Bounties(props) {
                     </div>
                   </div>
                   <div className="ice-Image">
-                    <img src={iceCream}></img>
+                    <img src={iceCream} alt="logo"></img>
                   </div>
                 </div>
               </div>
@@ -245,7 +251,7 @@ function Bounties(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Details></Details>
+            <Details formId={idValue}></Details>
           </div>
         </Fade>
       </Modal>
