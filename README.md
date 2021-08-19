@@ -2,6 +2,8 @@
 
 ![David DM Shield](https://david-dm.org/Creams-Quad/bounty-front.svg) ![last commit to repository](https://img.shields.io/github/last-commit/Creams-Quad/bounty-front)
 
+**Bounty** is a social network built around sharing recipes; more specifically, sharing and creating recipes for cold treats. **Bounty's** purpose is to crowd-source hard to find or non-existent recipes. Fulfill your cream-based cravings, and maybe make some friends on the way.
+
 ## 🚀 Getting Started
 
 1. Fork our repo [GitHub](https://github.com/Creams-Quad/bounty-front)
