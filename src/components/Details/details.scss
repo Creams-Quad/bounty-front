@@ -25,6 +25,19 @@
         justify-content: center;
         align-items: center;
         padding-right: 15px;
+
+        .heart{
+          line-height: .9;
+          padding-bottom: 8px;
+        }
+
+        .arrow{
+          height: 30px;
+        }
+
+        .arrow:hover{
+          filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(330deg) brightness(95%) contrast(80%);
+        }
         
       }
 
