@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "bounty",
   "version": "0.1.0",
+  "description": "Bounty is a social network built around sharing recipes; more specifically, sharing and creating recipes for cold treats.",
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.6.0",
