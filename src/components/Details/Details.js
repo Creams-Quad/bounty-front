@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./details.scss";
 import iceCream from "../../assets/iceCream.jpg";
+import arrowDown from "../../assets/arrowDown.png";
+import arrowUp from "../../assets/arrowUp.png";
+
 
 export default function Details() {
   const [karma, setKarma] = useState(1000);
@@ -29,9 +32,8 @@ export default function Details() {
               <div style={{ display: "flex" }}>
                 <div className="karma-increment">
                   <div onClick={incrementKarma} style={{ cursor: "pointer" }}>
-                    🔼
-                  </div>
-                  💜<div onClick={decrementKarma} style={{ cursor: "pointer" }}>🔽</div>
+                  <img className="arrow" src={arrowUp}></img>
+                  </div><div className="heart">💜</div><div onClick={decrementKarma} style={{ cursor: "pointer" }}><img className="arrow" src={arrowDown}></img></div>
                 </div>
                 <div>
                   <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
