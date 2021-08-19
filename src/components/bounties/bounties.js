@@ -7,7 +7,7 @@ import axios from 'axios';
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
 
 //styling imports 
-import { Description } from "@material-ui/icons";
+import { Description, SettingsInputAntennaTwoTone } from "@material-ui/icons";
 import "./bounties.scss";
 import TextField from "@material-ui/core/TextField";
 import iceCream from "../../assets/iceCream.jpg";
@@ -31,8 +31,38 @@ function Bounties() {
   const classes = useStyles();
   const [heading, setHeading] = useState("");
   const [description, setDescription]= useState("")
+  const [dbBounty, setDbBounty] = useState("");
   const [showNewBounty, setShowNewBounty] = useState(false);
   const {user, isAuthenticated, getIdTokenClaims} = useAuth0();
+
+  useEffect(() => {
+    if(isAuthenticated){
+      getIdTokenClaims()
+      .then(res => {
+        const jwt = res.__raw;
+        const config2 = {
+          header: {"Authorization": `Bearer ${jwt}`},
+          method: 'get',
+          baseURL: 'http://localhost:3000',
+          url: '/api/v1/bounties',
+        }
+        axios(config2)
+        // this is where we can make a request to GET bounty list
+        .then(function(response){
+          let axiosResults = response.data;
+          console.log(axiosResults);
+          setDbBounty(response.data)
+        })
+        .catch(function(err){
+          console.error(err)
+        })
+      })
+      .catch(function(err){
+      console.error(err);
+      })
+    }
+  }, [dbBounty] );
+  
 
   console.log('coming from bounty.js', user);
   
@@ -56,7 +86,7 @@ function Bounties() {
             baseURL:'http://localhost:3000',
             url:'/api/v1/bounties',
             data: {
-              heading: heading,
+              header: heading,
               content: description,
               karma: 100, 
               poster: user.given_name,
@@ -66,7 +96,22 @@ function Bounties() {
           // this is where we can make a request to GET bounty list
             .then(function(response){
               let axiosResults = response.data;
-              console.log(axiosResults);
+              console.log("",axiosResults);
+              // const config2 = {
+              //   header: {"Authorization": `Bearer ${jwt}`},
+              //   method: 'get',
+              //   baseURL: 'http://localhost:3000',
+              //   url: '/api/v1/bounties',
+              // }
+              // axios(config2)
+              //   .then(function(response){
+              //     console.log('GET',response)
+              //     setDbBounty(response.data);
+              //   })
+
+              //   .catch(function(err){
+              //     console.error(err)
+              //   }) 
             })
             .catch(function(err){
               console.error(err)
@@ -76,8 +121,9 @@ function Bounties() {
         console.error(err)
       })
     }
-  }    
-            
+  }  
+  // log the db for bounty  
+  console.log(dbBounty)         
           
   // show form        
   const handleNewBounty = () => {
@@ -137,27 +183,30 @@ function Bounties() {
           </Button>
         </form>
       </div>
-
-      <div className="board-wrapper">
-        <Link to="/details">
-          <div className="bounty-item">
-            <div>
-              <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-              <div className="bounty-descrip">
-                <div className="tiny-text">posted by</div>
-                <h6 className="name">Tek Jones</h6>
-                <h5> 01-23-21//4:30</h5>
-                <div className="descrip-buttons">💜Karma:1000</div>
-                <div className="descrip-buttons">📝Comments:3</div>
-              </div>
+        {dbBounty ?  dbBounty.reverse().map((bountyItem) => {
+          return(
+            <div className="board-wrapper">
+                <Link to="/details">
+                  <div className="bounty-item">
+                    <div>
+                      <h3 className="bounty-title">{bountyItem.header === null ? <p>Nothing to Render</p>  : bountyItem.header}</h3>
+                      <div className="bounty-descrip">
+                        <div className="tiny-text">posted by</div>
+                        <h6 className="name">{bountyItem.poster === null ? <p>Nothing to Render</p>  : bountyItem.poster}</h6>
+                        <h5> 01-23-21//4:30</h5>
+                        <div className="descrip-buttons">`💜${bountyItem.karma}`</div>
+                        <div className="descrip-buttons">📝Comments:3</div>
+                      </div>
+                    </div>
+                    <div className="ice-Image">
+                      <img src={iceCream}></img>
+                    </div>
+                  </div>
+                </Link>
             </div>
-            <div className="ice-Image">
-              <img src={iceCream}></img>
-            </div>
-          </div>
-        </Link>
-
-        <div className="bounty-item">
+          )
+        }): null}
+        {/* <div className="bounty-item">
           <div>
             <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
             <div className="bounty-descrip">
@@ -204,8 +253,9 @@ function Bounties() {
             <img src={iceCream}></img>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
+
   );
 }
 export default withAuth0(Bounties);
