@@ -27,7 +27,7 @@ When conflict arises, we will first and foremost communicate and gather a soluti
 
 Each team member will contribute and contributions made by each team member will come from constant communication and a check-up to see what has been done. If any team member finds that there is no work to be done, we will discuss what needs to be done and the team member will contribute to work that can be done. 
 
-Each team member will come to a uniform understanding in a technical and and skill level standpoint through constant communciation and sharing references to documentation. In the event that there is no understanding of all team members, that is the time to reach out to a third party such as a TA or an instructor for clarification. We will give ourselves a 15-30 min time-frame to figure a solution without third party intervention. 
+Each team member will come to a uniform understanding in a technical and and skill level standpoint through constant communication and sharing references to documentation. In the event that there is no understanding of all team members, that is the time to reach out to a third party such as a TA or an instructor for clarification. We will give ourselves a 15-30 min time-frame to figure a solution without third party intervention. 
 
 For team members not adequately contributing, communication is the first step in determining if this team member is currently struggling with something, before assigning a role to that team member. 
 
@@ -35,7 +35,7 @@ For team members not adequately contributing, communication is the first step in
 
 # Communication Plan 
 
-Hours of opertational communication will be from 9AM to 5PM, via Slack messaging, Zoom break-out rooms, or a table in Remo. If a team member is working after or before hours, communication will be done through Slack messaging and then CAN escalate into a video conference. 
+Hours of operational communication will be from 9AM to 5PM, via Slack messaging, Zoom break-out rooms, or a table in Remo. If a team member is working after or before hours, communication will be done through Slack messaging and then CAN escalate into a video conference. 
 
 Breaks will be performed at the top of each hour and general lunch time will be at 12PM and is flexible dependant on work load. 
 

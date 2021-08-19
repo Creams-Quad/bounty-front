@@ -3,7 +3,7 @@
 # Team Cream Squad
 - Cullen Sharp
 - Sunny Lee
-- Louis Lassgeue
+- Louis Lassegue
 - Tek Jones
 
 ## User Stories
