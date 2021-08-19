@@ -35,36 +35,7 @@ function Bounties() {
   const {user, isAuthenticated, getIdTokenClaims} = useAuth0();
 
   console.log('coming from bounty.js', user);
-
-  //Will make this request when user is authenticated 
-  useEffect(() => {
-    if(isAuthenticated){
-        getIdTokenClaims()
-      .then(res => {
-        const jwt = res.__raw;
-
-        const config = {
-          header: {"Authorization": `Bearer ${jwt}`},
-          method:'get',
-          baseURL:'http://localhost:3000',
-          url:'api/v1/bounties',
-        }
-        axios(config)
-        // this is where we can make a request to GET bounty list
-          .then(function(response){
-            let axiosResults = response.data;
-            console.log(axiosResults);
-          })
-          .catch(function(err){
-            console.error(err)
-          })
-      })
-      .catch(function(err){
-        console.error(err)
-      })
-    }
-  })
-
+  
   const handleChange = (event) => {
     setHeading(event.target.value);
   };
@@ -74,10 +45,41 @@ function Bounties() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowNewBounty(false);
-
-
-  };
-
+    // Making a sending a post request for new bounty
+    if(isAuthenticated){
+      getIdTokenClaims()
+      .then(res => {
+        const jwt = res.__raw;
+        const config = {
+            header: {"Authorization": `Bearer ${jwt}`},
+            method:'post',
+            baseURL:'http://localhost:3000',
+            url:'/api/v1/bounties',
+            data: {
+              heading: heading,
+              content: description,
+              karma: 100, 
+              poster: user.given_name,
+            },
+          }
+          axios(config)
+          // this is where we can make a request to GET bounty list
+            .then(function(response){
+              let axiosResults = response.data;
+              console.log(axiosResults);
+            })
+            .catch(function(err){
+              console.error(err)
+            })
+          })
+      .catch(function(err){
+        console.error(err)
+      })
+    }
+  }    
+            
+          
+          
   const handleNewBounty = () => {
     console.log("pressed");
     setShowNewBounty(true);
