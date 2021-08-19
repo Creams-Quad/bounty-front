@@ -1,24 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./details.scss";
-import iceCream from '../../assets/iceCream.jpg'
+import iceCream from "../../assets/iceCream.jpg";
 
 export default function Details() {
+  const [karma, setKarma] = useState(1000);
+
+  function incrementKarma() {
+    setKarma(karma + 1000);
+  }
+
+  function decrementKarma() {
+    if (karma <= 1000) {
+      setKarma(1000);
+    } else {
+      setKarma(karma - 1000);
+    }
+  }
+
   return (
     <div className="container">
       <div className="details">
-        <h4>details</h4>
+        
       </div>
       <div className="detail-wrapper">
         <div className="detail-title">
           <div className="bounty-item">
             <div>
-              <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
-              <div className="bounty-descrip">
-                <div className="tiny-text">posted by</div>
-                <h6 className="name">Tek Jones</h6>
-                <h5> 01-23-21//4:30</h5>
-                <div className="descrip-buttons">💜Karma:1000</div>
-                <div className="descrip-buttons">📝Comments:3</div>
+              <div style={{ display: "flex" }}>
+                <div className="karma-increment">
+                  <div onClick={incrementKarma} style={{ cursor: "pointer" }}>
+                    🔼
+                  </div>
+                  💜<div onClick={decrementKarma} style={{ cursor: "pointer" }}>🔽</div>
+                </div>
+                <div>
+                  <h3 className="bounty-title">Vegan Creamcicle Ice Cream</h3>
+                  <div className="bounty-descrip">
+                    <div className="tiny-text">posted by</div>
+                    <h6 className="name">Tek Jones</h6>
+                    <h5> 01-23-21//4:30</h5>
+                    <div className="descrip-buttons">💜Karma:{karma}</div>
+                    <div className="descrip-buttons">📝Comments:3</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="ice-Image">
