@@ -63,7 +63,6 @@ function Item(props)
             }}>
                 <img style={{
                         width: '60%',
-                        height:'80vh',
                         }}  
                         src={props.item.image} 
                         alt={props.item.name}/>

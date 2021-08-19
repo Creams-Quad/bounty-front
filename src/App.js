@@ -15,6 +15,7 @@ import Details from './components/Details/Details.js';
 import Bounties  from './components/bounties/bounties';
 import Admin from './components/admin/adminPage.js';
 import Team from './components/team/teamPage.js';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           </Route>
 
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );

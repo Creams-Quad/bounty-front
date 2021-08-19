@@ -15,11 +15,18 @@ body {
   font-size: 22px;
   color: #1b1a18;
   background-color: #f3f0eb;
-  font-height: 1;
+  line-height: 1;
   min-height: 100vh;
+  position: relative;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 70px; /* Set same as footer's height */
 }
 
 h1 {
@@ -72,7 +79,7 @@ p{
   max-width: 1560px;
   margin: auto;
   padding-left: 50px;
-  padding-right: 50px;
+  padding-right: 50px; 
 }
 
 .nav-container {

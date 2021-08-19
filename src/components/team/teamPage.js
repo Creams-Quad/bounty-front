@@ -26,7 +26,7 @@ export default function Team(){
     return(
         <div className="container">
             <main>
-                <div>
+                <div style={{marginBottom: "200px"}}>
                     <TransitionsModal/> 
                     <div style={{
                             background: "url('https://c.tenor.com/wcrmL2x1D2gAAAAC/assorted-icecream.gif')",
