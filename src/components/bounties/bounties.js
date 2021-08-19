@@ -49,10 +49,10 @@ function Bounties(props) {
       .then(res => {
         const jwt = res.__raw;
         const config2 = {
-          header: {"Authorization": `Bearer ${jwt}`},
+          headers: {"Authorization":`Bearer ${jwt}`},
           method: 'get',
-          baseURL: 'http://localhost:3000',
-          url: '/api/v1/bounties',
+          baseURL: process.env.REACT_APP_SERVER,
+          url: 'api/v2/bounties',
         }
         axios(config2)
         // this is where we can make a request to GET bounty list
@@ -71,7 +71,6 @@ function Bounties(props) {
     }
   }, [bountyInfo] );
   
-
   // console.log('coming from bounty.js', user);
   
   const handleChange = (event) => {
@@ -89,10 +88,10 @@ function Bounties(props) {
       .then(res => {
         const jwt = res.__raw;
         const config = {
-            header: {"Authorization": `Bearer ${jwt}`},
+            headers: {"Authorization":`Bearer ${jwt}`},
             method:'post',
-            baseURL:'http://localhost:3000',
-            url:'/api/v1/bounties',
+            baseURL:process.env.REACT_APP_SERVER,
+            url:'api/v2/bounties',
             data: {
               header: heading,
               content: description,
