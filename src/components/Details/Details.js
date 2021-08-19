@@ -4,15 +4,13 @@ import iceCream from "../../assets/iceCream.jpg";
 import arrowDown from "../../assets/arrowDown.png";
 import arrowUp from "../../assets/arrowUp.png";
 
-
-import { BountyContext } from '../bounties/createBountyProvider.js';
+import { BountyContext } from "../bounties/createBountyProvider.js";
 
 export default function Details() {
   const [karma, setKarma] = useState(1000);
 
-  const { bountyInfo  }  = useContext(BountyContext);
+  const { bountyInfo } = useContext(BountyContext);
 
-  
   function incrementKarma() {
     setKarma(karma + 1000);
   }
@@ -24,12 +22,12 @@ export default function Details() {
       setKarma(karma - 1000);
     }
   }
-console.log('details bounty info', bountyInfo)
+
+  
+  console.log("details bounty info", bountyInfo);
   return (
-    <div className="container" style={{marginBottom: "200px"}}>
-      <div className="details">
-        
-      </div>
+    <div className="container" style={{ marginBottom: "200px" }}>
+      <div className="details"></div>
       <div className="detail-wrapper">
         <div className="detail-title">
           <div className="bounty-item">
@@ -37,8 +35,12 @@ console.log('details bounty info', bountyInfo)
               <div style={{ display: "flex" }}>
                 <div className="karma-increment">
                   <div onClick={incrementKarma} style={{ cursor: "pointer" }}>
-                  <img className="arrow" src={arrowUp}></img>
-                  </div><div className="heart">💜</div><div onClick={decrementKarma} style={{ cursor: "pointer" }}><img className="arrow" src={arrowDown}></img></div>
+                    <img className="arrow" src={arrowUp}></img>
+                  </div>
+                  <div className="heart">💜</div>
+                  <div onClick={decrementKarma} style={{ cursor: "pointer" }}>
+                    <img className="arrow" src={arrowDown}></img>
+                  </div>
                 </div>
                 <div>
                   <h3 className="bounty-title">{bountyInfo.header}</h3>
@@ -57,9 +59,7 @@ console.log('details bounty info', bountyInfo)
             </div>
           </div>
         </div>
-        <p>
-          {bountyInfo.content}
-        </p>
+        <p>{bountyInfo.content}</p>
       </div>
     </div>
   );
