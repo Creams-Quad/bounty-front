@@ -63,6 +63,7 @@ function Bounties(props) {
       getIdTokenClaims()
         .then((res) => {
           const jwt = res.__raw;
+          console.log(jwt)
           const config2 = {
             headers: { Authorization: `Bearer ${jwt}` },
             method: "get",

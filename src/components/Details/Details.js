@@ -55,7 +55,6 @@ export default function Details(props) {
     if (isAuthenticated) {
       getIdTokenClaims().then((res) => {
         const jwt = res.__raw;
-
         const config = {
           headers: { Authorization: `Bearer ${jwt}` },
           method: "get",
