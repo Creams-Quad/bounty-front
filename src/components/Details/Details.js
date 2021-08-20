@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import iceCream from "../../assets/iceCream.jpg";
+import iceCream from "../../assets/iceCream.png";
 import arrowDown from "../../assets/arrowDown.png";
 import arrowUp from "../../assets/arrowUp.png";
 import { useAuth0 } from "@auth0/auth0-react";

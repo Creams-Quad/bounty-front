@@ -8,7 +8,7 @@ import { withAuth0, useAuth0 } from "@auth0/auth0-react";
 //styling imports
 import "./bounties.scss";
 import TextField from "@material-ui/core/TextField";
-import iceCream from "../../assets/iceCream.jpg";
+import iceCream from "../../assets/iceCream.png";
 import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
