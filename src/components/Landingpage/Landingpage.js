@@ -5,7 +5,8 @@ import icon1 from "../../assets/icon1.png";
 import icon2 from "../../assets/icon2.png";
 import icon3 from "../../assets/icon3.png";
 import demo1 from "../../assets/demo1.png";
-
+import demo2 from "../../assets/demo2.png";
+import demo3 from "../../assets/demo3.png";
 
 export default function Landingpage() {
   return (
@@ -75,7 +76,7 @@ export default function Landingpage() {
 
               <div className="box solid">
                 <div>
-                  <img  alt="icons" className="box-icons" src={icon2}></img>
+                  <img alt="icons" className="box-icons" src={icon2}></img>
                 </div>
                 <div>
                   <div className="box-header">Do a thing Yall</div>
@@ -95,7 +96,7 @@ export default function Landingpage() {
             </div>
           </section>
 
-          <section className='section'>
+          <section className="section">
             <div className="demo-grid">
               <div className="demo-grid-item-one">
                 <img alt="icons" src={demo1}></img>
@@ -104,6 +105,38 @@ export default function Landingpage() {
                 <div className="demo-title-wrapper">
                   <div className="box-header">
                     Let's start by creating your first bounty
+                  </div>
+                  <p>Lorem Ipsum a couple words on that.</p>
+                  <button className="demo-button">New Bounty</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section  className="section flex-reverse">
+            <div style={{flexDirection: "row-reverse"}} className="demo-grid">
+              <div className="demo-grid-item-one">
+                <img alt="icons" src={demo2}></img>
+              </div>
+              <div className="demo-grid-item-two">
+                <div className="demo-title-wrapper">
+                  <div className="box-header">
+                    Click on a bounty to join the conversation
+                  </div>
+                  <p>Lorem Ipsum a couple words on that.</p>
+                  <button className="demo-button">New Bounty</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section style={{marginBottom: "200px"}} className="section">
+            <div className="demo-grid">
+              <div className="demo-grid-item-one">
+                <img alt="icons" src={demo3}></img>
+              </div>
+              <div className="demo-grid-item-two">
+                <div className="demo-title-wrapper">
+                  <div className="box-header">
+                    Complete some recipes and collect your bounty
                   </div>
                   <p>Lorem Ipsum a couple words on that.</p>
                   <button className="demo-button">New Bounty</button>
