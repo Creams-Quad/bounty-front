@@ -1,27 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-import axios from 'axios';
 
 import TransitionsModal from '../team/modal.js';
 import MediaCard from '../team/teamCard.js';
 import MemeGenerator from './memeGenerator.js';
 
 export default function Team(){ 
-    
-    // const [meme, setMemes] = useState(); 
-
-    // useEffect(()=> {
-    //     axios({
-    //         method: 'get',
-    //         url: 'https://api.imgflip.com/get_memes',
-    //     })
-    //     .then( function(response) {
-    //        setMemes(response.data.data.memes);
-    //     })
-    //     .catch( function(err) {
-    //         console.error(err);
-    //     })
-    // })
 
     return(
         <div className="container">
@@ -70,7 +54,6 @@ export default function Team(){
                     <MediaCard/> 
                 </div>
             </main>
-          
         </div>
     ) 
 }
