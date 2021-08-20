@@ -69,8 +69,8 @@ export default function Landingpage() {
                   <img alt="icon" className="box-icons" src={icon1}></img>
                 </div>
                 <div>
-                  <div className="box-header">Do a thing Yall</div>
-                  <p>Lorem Ipsum a couple words on that.</p>
+                  <div className="box-header">1. Dream</div>
+                  <p>Be in the moment of your most creative self.</p>
                 </div>
               </div>
 
@@ -79,8 +79,8 @@ export default function Landingpage() {
                   <img alt="icons" className="box-icons" src={icon2}></img>
                 </div>
                 <div>
-                  <div className="box-header">Do a thing Yall</div>
-                  <p>Lorem Ipsum a couple words on that.</p>
+                  <div className="box-header">2. Post your idea</div>
+                  <p>Share your imagination so you can see it in REALITY.</p>
                 </div>
               </div>
 
@@ -89,8 +89,8 @@ export default function Landingpage() {
                   <img alt="icons" className="box-icons" src={icon3}></img>
                 </div>
                 <div>
-                  <div className="box-header">Do a thing Yall</div>
-                  <p>Lorem Ipsum a couple words on that.</p>
+                  <div className="box-header">3. Enjoy your creation</div>
+                  <p>Watch as others eat your idea while you are too!</p>
                 </div>
               </div>
             </div>
