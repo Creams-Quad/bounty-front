@@ -73,6 +73,7 @@ function Bounties(props) {
             // this is where we can make a request to GET bounty list
             .then(function (response) {
               let axiosResults = response.data;
+              console.log(axiosResults);
               setFormData([...axiosResults.reverse()]);
             })
             .catch(function (err) {
@@ -132,10 +133,10 @@ function Bounties(props) {
   const handleNewBounty = () => {
     setShowNewBounty(true);
   };
-
+  
   return (
-    <div className="container" style={{ marginBottom: "200px" }}>
-      <div className="bounty">
+    <div  className="container" style={{ marginBottom: "200px" }}>
+      <div  className="bounty">
         <div style={{ color: "#1e5451" }}>
           Create bounties or hunt outstanding claims
         </div>
@@ -186,20 +187,20 @@ function Bounties(props) {
         </form>
       </div>
       {formData
-        ? formData.map((bountyItem) => {
+        ? formData.map((bountyItem, idx) => {
             return (
-              <div className="board-wrapper">
-                <div type="button" onClick={() => handleOpen(bountyItem.id)} className="bounty-item">
-                  <div>
-                    <h3 className="bounty-title">
+                  <div key={idx} className="board-wrapper">
+              <div  type="button" onClick={() => handleOpen(bountyItem.id)} className="bounty-item">
+                  <div >
+                    <h3  className="bounty-title">
                       {bountyItem.header === null ? (
                         <p>Nothing to Render</p>
                       ) : (
                         bountyItem.header
                       )}
                     </h3>
-                    <div className="bounty-descrip">
-                      <div className="tiny-text">posted by</div>
+                    <div  className="bounty-descrip">
+                      <div  className="tiny-text">posted by</div>
                       <h6 className="name">
                         {bountyItem.poster === null ? (
                           <p>Nothing to Render</p>
@@ -207,14 +208,14 @@ function Bounties(props) {
                           bountyItem.poster
                         )}
                       </h6>
-                      <h5> 01-23-21//4:30</h5>
+                      <h5>{bountyItem.createdAt}</h5>
                       <div className="descrip-buttons">
-                        `💜${bountyItem.karma}`
+                        💜 {bountyItem.karma}
                       </div>
-                      <div className="descrip-buttons">📝Comments:3</div>
+                      <div  className="descrip-buttons">📝Comments:{bountyItem.Comments ?  bountyItem.Comments.length : 0}</div>
                     </div>
                   </div>
-                  <div className="ice-Image">
+                  <div  className="ice-Image">
                     <img src={iceCream} alt="logo"></img>
                   </div>
                 </div>

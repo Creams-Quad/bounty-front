@@ -34,7 +34,7 @@ export default function MediaCard() {
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image="https://thumbs-prod.si-cdn.com/dOgDrtOszaZn_DGhZAiv3rd4CA4=/fit-in/1600x0/https://public-media.si-cdn.com/filer/Chicken-Conquerer-631.jpg"
+                image="https://avatars.githubusercontent.com/u/5589323?v=4"
                 title="Sunny Lee"
                 />
                 <CardContent>
@@ -42,7 +42,7 @@ export default function MediaCard() {
                     Sunny Lee
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Software Developer specializing in JavaScript and interested with front-end technologies.
+                    I'm Sunny Lee, and I am an explorer of the developer world. I like to see how new things work and experiment with different technologies and a cominations of technologies. Currently, I am emphasizing in JavaScript but, will explore other languages.
                 </Typography>
                 </CardContent>
             </CardActionArea>
@@ -64,7 +64,7 @@ export default function MediaCard() {
         <CardActionArea>
             <CardMedia
             className={classes.media}
-            image="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8708b282-11b3-4bfc-ba55-a69569fa7d4f/d7uytq-80cf788a-0523-4fc1-ad95-e9574010bee4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg3MDhiMjgyLTExYjMtNGJmYy1iYTU1LWE2OTU2OWZhN2Q0ZlwvZDd1eXRxLTgwY2Y3ODhhLTA1MjMtNGZjMS1hZDk1LWU5NTc0MDEwYmVlNC5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.gPnvuVy23dylFhV-eaHfTi_4EJdEzrDcvyGH3zjaS8M"
+            image="https://avatars.githubusercontent.com/u/63610157?v=4"
             title="Tek Jones"
             />
             <CardContent>
@@ -72,7 +72,7 @@ export default function MediaCard() {
                 Tek Jones
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-                *Description goes here*
+            I'm an Air Force Veteran gone full stack developer, with an endless passion to surround myself with clean code and great design. After a high-pressure military career, I took that discipline and applied it to a visual communications program at the International College in Bangkok. After 15+ years in many design leadership roles and teamwork settings, I'm expanding my skill sets into web and software development. I think my experience in Design principles is a big advantage in helping me distill down the most impactful development features needed to make the most effective and engaging end products.
             </Typography>
             </CardContent>
         </CardActionArea>
@@ -81,7 +81,7 @@ export default function MediaCard() {
             <Button href="https://github.com/Tekthree" target="_blank" size="small" color="primary">
                 My GitHub
             </Button>
-            <Button  href="" target="_blank"size="small" color="primary">
+            <Button  href="https://www.linkedin.com/in/tek-jones-54b39562/" target="_blank"size="small" color="primary">
             My LinkedIn
             </Button>
         </CardActions>
@@ -95,15 +95,15 @@ export default function MediaCard() {
         <CardActionArea>
             <CardMedia
             className={classes.media}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4yoNZ76zuhUm_OD7LZtF2ObCjDUHyHSqElO6wfsthsvxBON_xw3-eo73U6ELeDMuN6U&usqp=CAU"
-            title="Louis Lessegue"
+            image="https://avatars.githubusercontent.com/u/74191805?v=4"
+            title="Louis Lassegue"
             />
             <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-                Louis Lessegue
+            Louis Lassegue
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-                *Description goes here*
+            I am Louis Lassegue, a Full-Stack Software Developer. After 15 years in a retail environment specializing in inventory, logistics, and customer service. I’ve learned how to lead a diverse team in different environments. I’m currently working to improve my skills in coding. I would like to work for a company that focuses on providing solutions to everyday problems. Additionally, it is important that the organization prides itself on creating an environment of inclusion and that encourages divergent thinking for solutions and ideas.
             </Typography>
             </CardContent>
         </CardActionArea>
@@ -112,7 +112,7 @@ export default function MediaCard() {
             <Button href="https://github.com/mrloulass" target="_blank" size="small" color="primary">
             My GitHub
             </Button>
-            <Button  href="" target="_blank"size="small" color="primary">
+            <Button  href="https://www.linkedin.com/in/louis-lassegue-4269531bb" target="_blank"size="small" color="primary">
             My LinkedIn
             </Button>
         </CardActions>
@@ -126,7 +126,7 @@ export default function MediaCard() {
         <CardActionArea>
             <CardMedia
             className={classes.media}
-            image="https://images.fineartamerica.com/images-medium-large-5/madonna-and-child-kirsten-beitler.jpg"
+            image="https://avatars.githubusercontent.com/u/38057919?v=4"
             title="Cullen Sharp"
             />
             <CardContent>
@@ -134,7 +134,7 @@ export default function MediaCard() {
                 Cullen Sharp
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-                *Description goes here*
+            Fullstack Web Developer with hands-on experience designing and developing web applications from concept to release. Motivated self-starter focused on working at the intersection of art, design, and technology to create immersive and intuitive user experiences.
             </Typography>
             </CardContent>
         </CardActionArea>
@@ -142,7 +142,7 @@ export default function MediaCard() {
             <Button href="https://github.com/CullenSharp" target="_blank" size="small" color="primary">
             My GitHub
             </Button>
-            <Button href="" target="_blank" size="small" color="primary">
+            <Button href="https://www.linkedin.com/in/cullensharp/" target="_blank" size="small" color="primary">
             My LinkedIn
             </Button>
         </CardActions>
