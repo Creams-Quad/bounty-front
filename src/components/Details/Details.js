@@ -149,7 +149,7 @@ export default function Details(props) {
           </div>
         </div>
         <p style={{ marginBottom: "50px" }}>{eachStore.content}</p>
-        <div style={{ height: "300px", overflow: "scroll" }}>
+        <div style={{ height: "250px", overflow: "scroll" }}>
           {comments ? (
             comments.map((comments) => {
               return (
