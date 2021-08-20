@@ -7,6 +7,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import {Link} from 'react-router-dom'
 
+
+
+
 export default function BountyNav() {
   const [scrollState, setScrollState] = useState("top");
   const { isAuthenticated } = useAuth0();
@@ -31,6 +34,7 @@ export default function BountyNav() {
     };
   }, [scrollState]);
 
+ 
 
   return (
     <>
@@ -50,24 +54,24 @@ export default function BountyNav() {
                   <img href= "/" src={logo} alt="" className="logo"/>
                 </a>  
               </div>
-           
               <div className="links" style={{display: "flex", alignItems: "center", justifyContent: "center"}}> 
-                {
-                isAuthenticated ? 
-                <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
-                  Admin
-                </Link> : null
-                }
-                {
-                isAuthenticated ? 
+                {isAuthenticated ? 
+                  <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
+                    Admin
+                  </Link>
+                : null}
+
+                {isAuthenticated ? 
                 <Link style={{margin:'10px', color: "#1e5451" }} to="/bountyboard">
                   Bounty Board
                 </Link>
                 : null 
                 }
+
                 <Link style={{marginRight:'20px', marginLeft:'10px', color: "#1e5451" }} to="/about">
                   Team
                 </Link>
+                
                 {isAuthenticated ? null : <LoginButton/>}
               </div>
 

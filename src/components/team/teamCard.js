@@ -57,8 +57,8 @@ export default function MediaCard() {
             </Card>
 
             <Card style={{
-                  width: '40vh',
-                  margin: '1%'
+                width: '40vh',
+                margin: '1%'
                 }}  
                 className={classes.root}>
         <CardActionArea>
@@ -119,8 +119,8 @@ export default function MediaCard() {
         </Card>
 
         <Card style={{
-                  width: '40vh',
-                  margin: '1%'
+                width: '40vh',
+                margin: '1%'
                 }}  
             className={classes.root}>
         <CardActionArea>

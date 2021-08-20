@@ -6,6 +6,7 @@ import icon2 from "../../assets/icon2.png";
 import icon3 from "../../assets/icon3.png";
 import demo1 from "../../assets/demo1.png";
 
+
 export default function Landingpage() {
   return (
     <div>
