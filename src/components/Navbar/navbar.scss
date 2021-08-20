@@ -2,6 +2,8 @@
   width: 100%;
   font-weight: 400;
   height: 100px;
+  position: relative;
+  z-index: 100;
 }
 
 .nav-flex {
@@ -21,4 +23,8 @@ a{
 
 .logo {
   height: 50px;
+
+  @media (max-width: 530px) {
+    height: 30px;
+  }
 }

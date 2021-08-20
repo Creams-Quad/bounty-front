@@ -8,6 +8,10 @@ $color-blue-green: #1E5451;
 $color-light-blue: #86BDBE;
 $color-orange: #F47A55;
 $color-yellow: #F9C681; */
+/* $media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)"; */
 
 body {
   font-family: roboto, sans-serif;
@@ -24,7 +28,7 @@ body {
 }
 
 body::after {
-  content: '';
+  content: "";
   display: block;
   height: 70px; /* Set same as footer's height */
 }
@@ -34,15 +38,21 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: 1;
-  font-size: 70px;
+  font-size: clamp(4.5vh, 7vw, 8vh); 
+  
 }
 
-h3{
+
+
+
+
+
+h3 {
   font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 42px;
-  color: #1E5451;
+  color: #1e5451;
 }
 
 h4 {
@@ -50,41 +60,40 @@ h4 {
   font-style: normal;
   font-weight: 700;
   line-height: 1;
-  font-size: 32px;
+  font-size: 4vmin;
 }
 
-h5{
+h5 {
   font-size: 17px;
   line-height: 1;
   font-weight: 300;
 }
 
-
-
-h6{
+h6 {
   font-size: 17px;
   line-height: 1;
   font-weight: 700;
 }
 
-p{
+p {
   font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: 300;
-  color: #1E5451
+  color: #1e5451;
 }
 
 .container {
   width: 100%;
-  max-width: 1560px;
+  max-width: 1360px;
   margin: auto;
   padding-left: 50px;
-  padding-right: 50px; 
+  padding-right: 50px;
+
 }
 
 .nav-container {
   width: 100%;
-  max-width: 1560px;
+  max-width: 1360px;
   margin: auto;
   padding-left: 50px;
   padding-right: 50px;

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./details.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -9,9 +9,7 @@ import arrowDown from "../../assets/arrowDown.png";
 import arrowUp from "../../assets/arrowUp.png";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 import axios from "axios";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +45,6 @@ export default function Details(props) {
   }
 
   const handleChange = (event) => {
-
     setFormComments(event.target.value);
   };
 
@@ -74,7 +71,7 @@ export default function Details(props) {
           });
       });
     }
-  }, [getIdTokenClaims, isAuthenticated, props.formId ]);
+  }, [getIdTokenClaims, isAuthenticated, props.formId]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -106,13 +103,16 @@ export default function Details(props) {
           });
       });
     }
-    setFormComments('');
+    setFormComments("");
   };
 
   return (
     <div className="container" style={{ marginBottom: "200px" }}>
       <div className="details"></div>
       <div className="detail-wrapper">
+        <div className="close-x" type="button" onClick={props.onClose}>
+          ✖
+        </div>
         <div className="detail-title">
           <div className="bounty-item">
             <div>
@@ -123,7 +123,11 @@ export default function Details(props) {
                   </div>
                   <div className="heart">💜</div>
                   <div onClick={decrementKarma} style={{ cursor: "pointer" }}>
-                    <img alt="downArrow" className="arrow" src={arrowDown}></img>
+                    <img
+                      alt="downArrow"
+                      className="arrow"
+                      src={arrowDown}
+                    ></img>
                   </div>
                 </div>
                 <div>
@@ -132,9 +136,7 @@ export default function Details(props) {
                     <div className="tiny-text">posted by</div>
                     <h6 className="name">{eachStore.poster}</h6>
                     <h5>{}</h5>
-                    <div className="descrip-buttons">
-                      💜Karma:{karma}
-                    </div>
+                    <div className="descrip-buttons">💜Karma:{karma}</div>
                     <div className="descrip-buttons">
                       📝Comments:
                       {eachStore.Comments ? eachStore.Comments.length : 0}

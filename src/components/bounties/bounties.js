@@ -1,5 +1,5 @@
 //component specific imports
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 //Auth
@@ -43,7 +43,7 @@ function Bounties(props) {
   const classes = useStyles();
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
-  const [formData, setFormData]= useState();
+  const [formData, setFormData] = useState();
   const [showNewBounty, setShowNewBounty] = useState(false);
   const [idValue, setIdValue] = useState();
   const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
@@ -51,7 +51,7 @@ function Bounties(props) {
 
   const handleOpen = (id) => {
     setOpen(true);
-    setIdValue(id)
+    setIdValue(id);
   };
 
   const handleClose = () => {
@@ -63,7 +63,6 @@ function Bounties(props) {
       getIdTokenClaims()
         .then((res) => {
           const jwt = res.__raw;
-          console.log(jwt)
           const config2 = {
             headers: { Authorization: `Bearer ${jwt}` },
             method: "get",
@@ -74,7 +73,6 @@ function Bounties(props) {
             // this is where we can make a request to GET bounty list
             .then(function (response) {
               let axiosResults = response.data;
-              console.log(axiosResults);
               setFormData([...axiosResults]);
             })
             .catch(function (err) {
@@ -117,7 +115,7 @@ function Bounties(props) {
             // this is where we can make a request to GET bounty list
             .then(function (response) {
               let axiosResults = response.data;
-              setFormData([{...axiosResults}, ...formData])
+              setFormData([{ ...axiosResults }, ...formData]);
             })
             .catch(function (err) {
               console.error(err);
@@ -126,18 +124,18 @@ function Bounties(props) {
         .catch(function (err) {
           console.error(err);
         });
-        setHeading("");
-        setDescription("");
+      setHeading("");
+      setDescription("");
     }
   };
 
   const handleNewBounty = () => {
     setShowNewBounty(true);
   };
-  
+
   return (
-    <div  className="container" style={{ marginBottom: "200px" }}>
-      <div  className="bounty">
+    <div className="container" style={{ marginBottom: "200px" }}>
+      <div className="bounty">
         <div style={{ color: "#1e5451" }}>
           Create bounties or hunt outstanding claims
         </div>
@@ -190,18 +188,22 @@ function Bounties(props) {
       {formData
         ? formData.map((bountyItem, idx) => {
             return (
-                  <div key={idx} className="board-wrapper">
-              <div  type="button" onClick={() => handleOpen(bountyItem.id)} className="bounty-item">
-                  <div >
-                    <h3  className="bounty-title">
+              <div key={idx} className="board-wrapper">
+                <div
+                  type="button"
+                  onClick={() => handleOpen(bountyItem.id)}
+                  className="bounty-item"
+                >
+                  <div>
+                    <h3 className="bounty-title">
                       {bountyItem.header === null ? (
                         <p>Nothing to Render</p>
                       ) : (
                         bountyItem.header
                       )}
                     </h3>
-                    <div  className="bounty-descrip">
-                      <div  className="tiny-text">posted by</div>
+                    <div className="bounty-descrip">
+                      <div className="tiny-text">posted by</div>
                       <h6 className="name">
                         {bountyItem.poster === null ? (
                           <p>Nothing to Render</p>
@@ -213,10 +215,13 @@ function Bounties(props) {
                       <div className="descrip-buttons">
                         💜 {bountyItem.karma}
                       </div>
-                      <div  className="descrip-buttons">📝Comments:{bountyItem.Comments ?  bountyItem.Comments.length : 0}</div>
+                      <div className="descrip-buttons">
+                        📝Comments:
+                        {bountyItem.Comments ? bountyItem.Comments.length : 0}
+                      </div>
                     </div>
                   </div>
-                  <div  className="ice-Image">
+                  <div className="ice-Image">
                     <img src={iceCream} alt="logo"></img>
                   </div>
                 </div>
@@ -238,7 +243,7 @@ function Bounties(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Details formId={idValue}></Details>
+            <Details onClose={handleClose} formId={idValue}></Details>
           </div>
         </Fade>
       </Modal>
