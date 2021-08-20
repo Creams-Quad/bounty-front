@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
@@ -34,7 +34,7 @@ function App(){
           </Route>
 
           <Route exact path="/bountyboard">
-            {isAuthenticated ? <Bounties /> : null}
+            {isAuthenticated ? <Bounties /> : <Landingpage/>}
           </Route>
 
           <Route exact path="/about">
@@ -44,6 +44,7 @@ function App(){
           <Route exact path="/details">
             <Details />
           </Route>
+
         </Switch>
         <Footer></Footer>
       </Router>
