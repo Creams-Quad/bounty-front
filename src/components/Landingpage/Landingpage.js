@@ -26,6 +26,7 @@ export default function Landingpage() {
             <div className="grid-item-two">
               <img alt="hero" src={heroImage}></img>
             </div>
+            <div className="grain"></div>
           </div>
           <section className="section">
             <div className="author-wrapper">
@@ -112,8 +113,8 @@ export default function Landingpage() {
               </div>
             </div>
           </section>
-          <section  className="section flex-reverse">
-            <div style={{flexDirection: "row-reverse"}} className="demo-grid">
+          <section  className="section">
+            <div className="demo-grid flex-reverse">
               <div className="demo-grid-item-one">
                 <img alt="icons" src={demo2}></img>
               </div>
@@ -146,6 +147,7 @@ export default function Landingpage() {
           </section>
         </div>
       </main>
+        
     </div>
   );
 }

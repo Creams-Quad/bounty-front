@@ -10,7 +10,7 @@ export default function Team(){
     return(
         <div className="container">
             <main>
-                <div style={{marginBottom: "200px"}}>
+                <div style={{marginTop: "100px",marginBottom: "200px"}}>
                     <div style={{
                         background: "url('https://c.tenor.com/wcrmL2x1D2gAAAAC/assorted-icecream.gif')",
                         backgroundSize: 'contain',
@@ -38,7 +38,7 @@ export default function Team(){
 
                     <div style={{
                         marginTop: '10%',
-                        marginBottom: '10%'
+                        marginBottom: '10%',
                     }}>
                         <p>As you can see from the slide-show up above, there are many different ideas that have lots of potential. We want to understand what users really want in their ice-cream.</p>
                         <TransitionsModal/> 
