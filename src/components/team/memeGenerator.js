@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 
 
 
@@ -62,7 +62,7 @@ function Item(props)
                     alignItems: 'center'
             }}>
                 <img  alt="ice cream" style={{
-                        width: '60%',
+                        height: '600px',
                         }}  
                         src={props.item.image} 
                         alt={props.item.name}/>
