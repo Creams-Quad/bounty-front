@@ -65,7 +65,7 @@ export default function Details(props) {
         axios(config)
           .then(function (response) {
             setEachStore({ ...response.data });
-            setComments([...comments, ...response.data.Comments]);
+            setComments([...response.data.Comments]);
           })
           .catch(function (err) {
             console.error(err);
@@ -75,7 +75,7 @@ export default function Details(props) {
           });
       });
     }
-  }, [comments, getIdTokenClaims, isAuthenticated, props.formId ]);
+  }, [getIdTokenClaims, isAuthenticated, props.formId ]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -154,7 +154,7 @@ export default function Details(props) {
           {comments ? (
             comments.map((comments) => {
               return (
-                <div className="user-comments">
+                <div key={comments.createdAt} className="user-comments">
                   <div className="user-name">
                     <div>posted by</div>
                     <h6>{comments.poster}</h6>
