@@ -74,7 +74,7 @@ function Bounties(props) {
             .then(function (response) {
               let axiosResults = response.data;
               console.log(axiosResults);
-              setFormData([...axiosResults.reverse()]);
+              setFormData([...axiosResults]);
             })
             .catch(function (err) {
               console.error(err);
