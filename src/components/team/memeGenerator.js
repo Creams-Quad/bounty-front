@@ -61,7 +61,7 @@ function Item(props)
                     justifyContent: 'center',
                     alignItems: 'center'
             }}>
-                <img style={{
+                <img  alt="ice cream" style={{
                         width: '60%',
                         }}  
                         src={props.item.image} 

@@ -22,7 +22,7 @@ export default function Landingpage() {
               </div>
             </div>
             <div className="grid-item-two">
-              <img alt="hero Image" src={heroImage}></img>
+              <img alt="hero" src={heroImage}></img>
             </div>
           </div>
           <section className="section">
@@ -64,7 +64,7 @@ export default function Landingpage() {
             <div className="box-wrapper">
               <div className="box">
                 <div>
-                  <img className="box-icons" src={icon1}></img>
+                  <img alt="icon" className="box-icons" src={icon1}></img>
                 </div>
                 <div>
                   <div className="box-header">Do a thing Yall</div>
@@ -74,7 +74,7 @@ export default function Landingpage() {
 
               <div className="box solid">
                 <div>
-                  <img className="box-icons" src={icon2}></img>
+                  <img  alt="icons" className="box-icons" src={icon2}></img>
                 </div>
                 <div>
                   <div className="box-header">Do a thing Yall</div>
@@ -84,7 +84,7 @@ export default function Landingpage() {
 
               <div className="box">
                 <div>
-                  <img className="box-icons" src={icon3}></img>
+                  <img alt="icons" className="box-icons" src={icon3}></img>
                 </div>
                 <div>
                   <div className="box-header">Do a thing Yall</div>
@@ -97,7 +97,7 @@ export default function Landingpage() {
           <section className='section'>
             <div className="demo-grid">
               <div className="demo-grid-item-one">
-                <img src={demo1}></img>
+                <img alt="icons" src={demo1}></img>
               </div>
               <div className="demo-grid-item-two">
                 <div className="demo-title-wrapper">
