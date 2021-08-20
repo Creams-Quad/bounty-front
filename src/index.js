@@ -4,7 +4,6 @@ import App from "./App";
 import "./index.css";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-import BountyContext from './components/bounties/createBountyProvider.js';
 
 
 ReactDOM.render(
@@ -13,9 +12,7 @@ ReactDOM.render(
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
       >
-      <BountyContext>
         <App />
-      </BountyContext>
     </Auth0Provider>,
   document.getElementById("root")
 );

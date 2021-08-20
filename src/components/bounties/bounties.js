@@ -1,9 +1,6 @@
 //component specific imports
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
-
-//Context
-import { BountyContext } from "../bounties/createBountyProvider.js";
 
 //Auth
 import { withAuth0, useAuth0 } from "@auth0/auth0-react";
@@ -46,12 +43,7 @@ function Bounties(props) {
   const classes = useStyles();
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
-
-  const { bountyInfo, setBountyInfo } = useContext(BountyContext);
-
-  // const [postData, setPostData] = useState();
   const [formData, setFormData]= useState();
-
   const [showNewBounty, setShowNewBounty] = useState(false);
   const [idValue, setIdValue] = useState();
   const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
@@ -81,8 +73,7 @@ function Bounties(props) {
             // this is where we can make a request to GET bounty list
             .then(function (response) {
               let axiosResults = response.data;
-              // console.log(axiosResults);
-              setFormData(axiosResults);
+              setFormData([...axiosResults.reverse()]);
             })
             .catch(function (err) {
               console.error(err);
@@ -92,9 +83,7 @@ function Bounties(props) {
           console.error(err);
         });
     }
-  }, [formData]);
-
-  // console.log('coming from bounty.js', user);
+  }, [getIdTokenClaims, isAuthenticated]);
 
   const handleChange = (event) => {
     setHeading(event.target.value);
@@ -118,7 +107,7 @@ function Bounties(props) {
             data: {
               header: heading,
               content: description,
-              karma: 100,
+              karma: 1000,
               poster: user.given_name,
             },
           };
@@ -126,7 +115,7 @@ function Bounties(props) {
             // this is where we can make a request to GET bounty list
             .then(function (response) {
               let axiosResults = response.data;
-              console.log("", axiosResults);
+              setFormData([{...axiosResults}, ...formData])
             })
             .catch(function (err) {
               console.error(err);
@@ -135,16 +124,12 @@ function Bounties(props) {
         .catch(function (err) {
           console.error(err);
         });
+        setHeading("");
+        setDescription("");
     }
   };
 
-
-  // log the db for bounty
-  // console.log(dbBounty)
-  // console.log(formData)
-  // show form
   const handleNewBounty = () => {
-    console.log("pressed");
     setShowNewBounty(true);
   };
 
@@ -191,7 +176,7 @@ function Bounties(props) {
               multiline
               rows={8}
               onChange={handleDescChange}
-              defaultValue=""
+              value={description}
               variant="outlined"
             />
           </div>
@@ -201,7 +186,7 @@ function Bounties(props) {
         </form>
       </div>
       {formData
-        ? formData.reverse().map((bountyItem) => {
+        ? formData.map((bountyItem) => {
             return (
               <div className="board-wrapper">
                 <div type="button" onClick={() => handleOpen(bountyItem.id)} className="bounty-item">
