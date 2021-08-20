@@ -5,9 +5,12 @@
 
 .detail-wrapper{
   margin-top: 30px;
+  margin-bottom: 200px;
   padding: 40px 60px 60px 60px;
   background-color: white;
   border-radius: 8px;
+  
+  
 
   .detail-title{
     .bounty-item {
@@ -90,5 +93,19 @@
       }
     }
 
+  }
+
+  .user-comments{
+    margin-bottom: 20px;
+
+    .user-name{
+      display: flex;
+      align-items: center;
+      
+      div{
+        font-size: 10px;
+        padding-bottom: 3px;
+      }
+    }
   }
 }

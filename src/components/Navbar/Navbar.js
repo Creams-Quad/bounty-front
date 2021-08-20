@@ -6,19 +6,17 @@ import LoginButton from "../LoginButton.js";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import {Link} from 'react-router-dom'
-import axios from "axios";
 
 
 
 
 export default function BountyNav() {
-  let listener = null;
   const [scrollState, setScrollState] = useState("top");
-  // const [meme, setMemes] = useState()
   const { isAuthenticated } = useAuth0();
-
+  
   // nav bar color change on scroll
   useEffect(() => {
+    let listener = null;
     listener = document.addEventListener("scroll", (e) => {
       var scrolled = document.scrollingElement.scrollTop;
       if (scrolled >= 120) {

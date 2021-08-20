@@ -1,20 +1,39 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import "./details.scss";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
 import iceCream from "../../assets/iceCream.jpg";
 import arrowDown from "../../assets/arrowDown.png";
 import arrowUp from "../../assets/arrowUp.png";
-import {useAuth0} from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
 
-import { BountyContext } from "../bounties/createBountyProvider.js";
+
 import axios from "axios";
 
-export default function Details(props) {
-  const [karma, setKarma] = useState(1000);
-  const {isAuthenticated, getIdTokenClaims} = useAuth0() 
-  const { bountyInfo } = useContext(BountyContext);
-  const [eachStore, setEachStore] = useState({});
 
-  console.log('line 17', props)
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    marginTop: "40px",
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: "25ch",
+  },
+}));
+
+export default function Details(props) {
+  const classes = useStyles();
+  const [karma, setKarma] = useState(1000);
+  const { isAuthenticated, getIdTokenClaims, user } = useAuth0();
+  const [eachStore, setEachStore] = useState({});
+  const [formComments, setFormComments] = useState("");
+  const [comments, setComments] = useState([]);
+
   function incrementKarma() {
     setKarma(karma + 1000);
   }
@@ -27,35 +46,70 @@ export default function Details(props) {
     }
   }
 
-  useEffect(()=> {
-    if(isAuthenticated){
-      getIdTokenClaims()
-        .then((res) => {
-          const jwt = res.__raw;
-          console.log(props)
-          
-          const config = {
-            headers:{"Authorization": `Bearer ${jwt}`},
-            method:'get',
-            baseURL: process.env.REACT_APP_SERVER,
-            url: `api/v2/bounties/${props.formId}`
-          }
-          axios(config)
-            .then(function(response){
-              setEachStore({...response.data})
-            })
-            .catch(function(err){
-              console.error(err)
-            })
-          .catch(function(err){
-            console.error(err)
+  const handleChange = (event) => {
+
+    setFormComments(event.target.value);
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      getIdTokenClaims().then((res) => {
+        const jwt = res.__raw;
+
+        const config = {
+          headers: { Authorization: `Bearer ${jwt}` },
+          method: "get",
+          baseURL: process.env.REACT_APP_SERVER,
+          url: `api/v2/bounties/${props.formId}`,
+        };
+        axios(config)
+          .then(function (response) {
+            setEachStore({ ...response.data });
+            setComments([...comments, ...response.data.Comments]);
+          })
+          .catch(function (err) {
+            console.error(err);
+          })
+          .catch(function (err) {
+            console.error(err);
           });
-        }
-      )
+      });
     }
-  }, [])
-  
-  console.log('details state', eachStore)
+  }, [comments, getIdTokenClaims, isAuthenticated, props.formId ]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isAuthenticated) {
+      getIdTokenClaims().then((res) => {
+        const jwt = res.__raw;
+
+        const config = {
+          headers: { Authorization: `Bearer ${jwt}` },
+          method: "post",
+          baseURL: process.env.REACT_APP_SERVER,
+          url: "api/v2/comments",
+          data: {
+            bountyId: props.formId,
+            poster: user.name,
+            header: props.header,
+            content: formComments,
+          },
+        };
+        axios(config)
+          .then(function (response) {
+            setComments([...comments, { ...response.data }]);
+          })
+          .catch(function (err) {
+            console.error(err);
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
+      });
+    }
+    setFormComments('');
+  };
+
   return (
     <div className="container" style={{ marginBottom: "200px" }}>
       <div className="details"></div>
@@ -66,11 +120,11 @@ export default function Details(props) {
               <div style={{ display: "flex" }}>
                 <div className="karma-increment">
                   <div onClick={incrementKarma} style={{ cursor: "pointer" }}>
-                    <img className="arrow" src={arrowUp}></img>
+                    <img alt="upArrow" className="arrow" src={arrowUp}></img>
                   </div>
                   <div className="heart">💜</div>
                   <div onClick={decrementKarma} style={{ cursor: "pointer" }}>
-                    <img className="arrow" src={arrowDown}></img>
+                    <img alt="downArrow" className="arrow" src={arrowDown}></img>
                   </div>
                 </div>
                 <div>
@@ -79,8 +133,13 @@ export default function Details(props) {
                     <div className="tiny-text">posted by</div>
                     <h6 className="name">{eachStore.poster}</h6>
                     <h5>{}</h5>
-                    <div className="descrip-buttons">💜Karma:{eachStore.karma}</div>
-                    <div className="descrip-buttons">📝Comments:{eachStore.Comments ? eachStore.Comments.length : 0}</div>
+                    <div className="descrip-buttons">
+                      💜Karma:{karma}
+                    </div>
+                    <div className="descrip-buttons">
+                      📝Comments:
+                      {eachStore.Comments ? eachStore.Comments.length : 0}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -90,9 +149,48 @@ export default function Details(props) {
             </div>
           </div>
         </div>
-        <p>{bountyInfo.content}</p>
+        <p style={{ marginBottom: "50px" }}>{eachStore.content}</p>
+        <div style={{ height: "300px", overflow: "scroll" }}>
+          {comments ? (
+            comments.map((comments) => {
+              return (
+                <div className="user-comments">
+                  <div className="user-name">
+                    <div>posted by</div>
+                    <h6>{comments.poster}</h6>
+                  </div>
+                  <p>{comments.content}</p>
+                </div>
+              );
+            })
+          ) : (
+            <div></div>
+          )}
+        </div>
+
+        <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+          <div className={classes.root}>
+            <TextField
+              id="outlined-full-width"
+              label="Comments"
+              placeholder="Join the convo or claim the bounty"
+              fullWidth
+              multiline
+              rows={3}
+              margin="normal"
+              value={formComments}
+              onChange={handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+            />
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
+          </div>
+        </form>
       </div>
-    
     </div>
   );
 }
