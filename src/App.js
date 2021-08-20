@@ -19,14 +19,13 @@ import Bounties from "./components/bounties/bounties";
 import Team from "./components/team/teamPage.js";
 import Footer from "./components/Footer/Footer";
 
-
+function App(){
   // Auth0 methods and functions
   const { isAuthenticated } = useAuth0();
 
 
   return (
     <div className="App">
-      {/* <Bounties/> */}
       <Router>
         <Navbar></Navbar>
         <Switch>

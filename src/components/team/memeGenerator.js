@@ -45,7 +45,7 @@ function Item(props)
 {
     return (
         <Paper style={{
-               background: "url('https://i.gifer.com/GPkR.gif')"
+            background: "url('https://i.gifer.com/GPkR.gif')"
                 }}>
             <h2>{props.item.name}</h2>
             <p style={{
@@ -65,7 +65,7 @@ function Item(props)
                         height: '600px',
                         }}  
                         src={props.item.image} 
-                        alt={props.item.name}/>
+                        />
             </div>
         </Paper>
     )
