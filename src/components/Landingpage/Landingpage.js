@@ -26,7 +26,6 @@ export default function Landingpage() {
             <div className="grid-item-two">
               <img alt="hero" src={heroImage}></img>
             </div>
-            <div className="grain"></div>
           </div>
           <section className="section">
             <div className="author-wrapper">
