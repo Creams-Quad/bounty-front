@@ -73,6 +73,7 @@ const mainBackground ={
                         </h2>
                     </div>
                 </div>
+                {/* container */}
                 <div style={{marginLeft: '50vh', width: '85vh'}}>
                     <h3 id="GuildMasterTitle">Create a user or check the bounties.
                     <span aria-hidden>_</span>
