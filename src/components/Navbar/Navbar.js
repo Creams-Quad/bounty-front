@@ -56,18 +56,27 @@ export default function BountyNav() {
               </div>
               <div className="links" style={{display: "flex", alignItems: "center", justifyContent: "center"}}> 
                 
-                {isAuthenticated ? 
-                <Link style={{margin:'10px', color: "#1e5451" }} to="/bountyboard">
-                  Bounty Board
+              {isAuthenticated ? 
+                <Link style={{margin:'10px', color: "#1e5451" }} to="/admin">
+                  Guild Master's Room
                 </Link>
                 : null 
+              }
+                {isAuthenticated ? 
+                  <Link style={{margin:'10px', color: "#1e5451" }} to="/bountyboard">
+                    Bounty Board
+                  </Link>
+                  : null 
                 }
+
 
                 <Link style={{marginRight:'20px', marginLeft:'10px', color: "#1e5451" }} to="/about">
                   Team
-                </Link>
-                
+                </Link>           
+
                 {isAuthenticated ? null : <LoginButton/>}
+
+
               </div>
 
             </div>
