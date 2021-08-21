@@ -16,6 +16,7 @@ import {
 //Components
 import Details from "./components/Details/Details.js";
 import Bounties from "./components/bounties/bounties";
+import AdminPage from "./components/admin/AdminPage";
 import Team from "./components/team/teamPage.js";
 import Footer from "./components/Footer/Footer";
 
@@ -35,6 +36,10 @@ function App(){
 
           <Route exact path="/bountyboard">
             {isAuthenticated ? <Bounties /> : <Landingpage/>}
+          </Route>
+
+          <Route exact path="/admin">
+            {isAuthenticated ? <AdminPage/> : <Landingpage/>}
           </Route>
 
           <Route exact path="/about">

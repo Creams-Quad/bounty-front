@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+
 import iceCream from "../../assets/iceCream.png";
 import arrowDown from "../../assets/arrowDown.png";
 import arrowUp from "../../assets/arrowUp.png";
@@ -78,7 +79,7 @@ export default function Details(props) {
     if (isAuthenticated) {
       getIdTokenClaims().then((res) => {
         const jwt = res.__raw;
-
+        console.log(jwt);
         const config = {
           headers: { Authorization: `Bearer ${jwt}` },
           method: "post",

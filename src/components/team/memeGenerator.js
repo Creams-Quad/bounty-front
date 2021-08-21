@@ -54,7 +54,7 @@ function Item(props)
                 fontSize: '30pt',
                 marginLeft: '8%'
                 }}>
-                    {props.item.description}</p>
+                {props.item.description}</p>
             
             <div style={{
                     display: 'flex',
